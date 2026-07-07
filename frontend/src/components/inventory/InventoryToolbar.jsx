@@ -3,6 +3,7 @@ import { Plus } from "lucide-react";
 
 import SearchBar from "./SearchBar";
 import CategoryFilter from "./CategoryFilter";
+import AddProductDialog from "./AddProductDialog";
 
 export default function InventoryToolbar({
   search,
@@ -27,7 +28,7 @@ export default function InventoryToolbar({
 
       <Button>
         <Plus className="mr-2 h-4 w-4" />
-        Add Product
+        <AddProductDialog />
       </Button>
 
     </div>
