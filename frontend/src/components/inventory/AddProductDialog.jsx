@@ -16,7 +16,7 @@ import { productSchema } from "../../schemas/productSchema";
 
 import ProductForm from "./ProductForm";
 
-export default function AddProductDialog() {
+export default function AddProductDialog({ addProduct }) {
     const {
   register,
   handleSubmit,
@@ -26,7 +26,8 @@ export default function AddProductDialog() {
 });
 
 const onSubmit = (data) => {
-  console.log(data);
+  addProduct(data);
+  console.log("Product Added:", data);
 };
   return (
     <Dialog>

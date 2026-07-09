@@ -3,7 +3,7 @@ import { useState } from "react";
 import InventoryToolbar from "../../components/inventory/InventoryToolbar";
 import ProductTable from "../../components/inventory/ProductTable";
 
-const products = [
+const initialProducts = [
   {
     id: 1,
     image: "https://placehold.co/80x80",
@@ -36,7 +36,46 @@ const products = [
 export default function Inventory() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
+  const [products, setProducts] = useState(initialProducts);
 
+  // Add Product
+  const addProduct = (newProduct) => {
+    const product = {
+      id: Date.now(),
+      image: "https://placehold.co/80x80",
+      name: newProduct.name,
+      sku: newProduct.sku,
+      category: newProduct.category || "General",
+      price: Number(newProduct.sellingPrice) || 0,
+      stock: Number(newProduct.quantity) || 0,
+      ...newProduct,
+    };
+
+    setProducts((prev) => [...prev, product]);
+  };
+
+  // Update Product
+  const updateProduct = (updatedProduct) => {
+    setProducts((prevProducts) =>
+      prevProducts.map((product) =>
+        product.id === updatedProduct.id
+          ? {
+              ...product,
+              ...updatedProduct,
+              price: Number(updatedProduct.sellingPrice) || product.price,
+              stock: Number(updatedProduct.quantity) || product.stock,
+            }
+          : product
+      )
+    );
+  };
+
+  // Delete Product
+const deleteProduct = (id) => {
+  setProducts((prevProducts) =>
+    prevProducts.filter((product) => product.id !== id)
+  );
+};
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.name
       .toLowerCase()
@@ -44,7 +83,7 @@ export default function Inventory() {
 
     const matchesCategory =
       category === "all" ||
-      product.category.toLowerCase() === category;
+      product.category.toLowerCase() === category.toLowerCase();
 
     return matchesSearch && matchesCategory;
   });
@@ -66,9 +105,14 @@ export default function Inventory() {
         setSearch={setSearch}
         category={category}
         setCategory={setCategory}
+        addProduct={addProduct}
       />
 
-      <ProductTable products={filteredProducts} />
+      <ProductTable
+  products={filteredProducts}
+  updateProduct={updateProduct}
+  deleteProduct={deleteProduct}
+/>
     </div>
   );
 }

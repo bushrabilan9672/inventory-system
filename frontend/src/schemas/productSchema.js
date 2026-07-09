@@ -11,29 +11,17 @@ export const productSchema = z.object({
 
   barcode: z.string().optional(),
 
-  category: z
-    .string()
-    .min(1, "Please select a category"),
+  category: z.string().optional(),
 
-  supplier: z
-    .string()
-    .min(1, "Please select a supplier"),
+  supplier: z.string().optional(),
 
-  purchasePrice: z.coerce
-    .number()
-    .positive("Purchase price must be greater than 0"),
+  quantity: z.coerce.number().optional(),
 
-  sellingPrice: z.coerce
-    .number()
-    .positive("Selling price must be greater than 0"),
+  minimumStock: z.coerce.number().optional(),
 
-  quantity: z.coerce
-    .number()
-    .min(0, "Quantity cannot be negative"),
+  purchasePrice: z.coerce.number(),
 
-  minimumStock: z.coerce
-    .number()
-    .min(0, "Minimum stock cannot be negative"),
+  sellingPrice: z.coerce.number(),
 
   description: z.string().optional(),
 });

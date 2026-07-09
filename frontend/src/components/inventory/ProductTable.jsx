@@ -1,6 +1,10 @@
 import ProductRow from "./ProductRow";
 
-export default function ProductTable({ products }) {
+export default function ProductTable({
+  products,
+  updateProduct,
+  deleteProduct,
+}) {
   return (
     <div className="overflow-hidden rounded-xl border bg-white shadow-sm">
       <div className="overflow-x-auto">
@@ -20,10 +24,12 @@ export default function ProductTable({ products }) {
 
           <tbody>
             {products.map((product) => (
-              <ProductRow
-                key={product.id}
-                product={product}
-              />
+             <ProductRow
+  key={product.id}
+  product={product}
+  updateProduct={updateProduct}
+  deleteProduct={deleteProduct}
+/>
             ))}
           </tbody>
         </table>

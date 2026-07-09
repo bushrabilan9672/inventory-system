@@ -44,7 +44,75 @@ export default function ProductForm({
           </p>
         )}
       </div>
+      {/* Barcode */}
+<div>
+  <Label htmlFor="barcode">
+    Barcode
+  </Label>
 
+  <Input
+    id="barcode"
+    placeholder="Barcode"
+    {...register("barcode")}
+  />
+</div>
+{/* Purchase Price */}
+<div>
+  <Label htmlFor="purchasePrice">
+    Purchase Price
+  </Label>
+
+  <Input
+    type="number"
+    id="purchasePrice"
+    placeholder="0.00"
+    {...register("purchasePrice")}
+  />
+
+  {errors.purchasePrice && (
+    <p className="mt-1 text-sm text-red-500">
+      {errors.purchasePrice.message}
+    </p>
+  )}
+</div>
+{/* Selling Price */}
+<div>
+  <Label htmlFor="sellingPrice">
+    Selling Price
+  </Label>
+
+  <Input
+    type="number"
+    id="sellingPrice"
+    placeholder="0.00"
+    {...register("sellingPrice")}
+  />
+
+  {errors.sellingPrice && (
+    <p className="mt-1 text-sm text-red-500">
+      {errors.sellingPrice.message}
+    </p>
+  )}
+</div>
+{/* Quantity */}
+<div>
+  <Label htmlFor="quantity">
+    Quantity
+  </Label>
+
+  <Input
+    type="number"
+    id="quantity"
+    placeholder="Enter quantity"
+    {...register("quantity")}
+  />
+
+  {errors.quantity && (
+    <p className="mt-1 text-sm text-red-500">
+      {errors.quantity.message}
+    </p>
+  )}
+</div>
       {/* Description */}
       <div>
         <Label htmlFor="description">

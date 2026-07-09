@@ -1,6 +1,3 @@
-import { Button } from "../ui/button";
-import { Plus } from "lucide-react";
-
 import SearchBar from "./SearchBar";
 import CategoryFilter from "./CategoryFilter";
 import AddProductDialog from "./AddProductDialog";
@@ -10,6 +7,8 @@ export default function InventoryToolbar({
   setSearch,
   category,
   setCategory,
+  addProduct,
+  updateProduct,
 }) {
   return (
     <div className="flex flex-col gap-4 rounded-xl border bg-white p-4 md:flex-row md:items-center md:justify-between">
@@ -26,10 +25,10 @@ export default function InventoryToolbar({
         />
       </div>
 
-      <Button>
-        <Plus className="mr-2 h-4 w-4" />
-        <AddProductDialog />
-      </Button>
+      
+        
+        <AddProductDialog addProduct={addProduct} />
+      
 
     </div>
   );

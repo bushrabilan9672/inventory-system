@@ -1,8 +1,14 @@
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { Pencil, Trash2, Eye } from "lucide-react";
+import EditProductDialog from "./EditProductDialog";
+import DeleteProductDialog from "./DeleteProductDialog";
 
-export default function ProductRow({ product }) {
+export default function ProductRow({
+  product,
+  updateProduct,
+  deleteProduct,
+}) {
   return (
     <tr className="border-b hover:bg-slate-50 transition-colors">
       <td className="px-4 py-3">
@@ -47,13 +53,14 @@ export default function ProductRow({ product }) {
             <Eye size={16} />
           </Button>
 
-          <Button size="icon" variant="outline">
-            <Pencil size={16} />
-          </Button>
-
-          <Button size="icon" variant="destructive">
-            <Trash2 size={16} />
-          </Button>
+          <EditProductDialog
+  product={product}
+  updateProduct={updateProduct}
+/>
+          <DeleteProductDialog
+  product={product}
+  deleteProduct={deleteProduct}
+/>
         </div>
       </td>
     </tr>
