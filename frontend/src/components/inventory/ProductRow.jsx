@@ -13,7 +13,7 @@ export default function ProductRow({
     <tr className="border-b hover:bg-slate-50 transition-colors">
       <td className="px-4 py-3">
         <img
-          src={product.image}
+          src={product.image || "https://placehold.co/80x80"}
           alt={product.name}
           className="h-12 w-12 rounded-lg object-cover border"
         />
@@ -31,20 +31,19 @@ export default function ProductRow({
         {product.category}
       </td>
 
-      <td className="px-4 py-3">
-        KSh {product.price.toLocaleString()}
-      </td>
-
-      <td className="px-4 py-3">
-        {product.stock}
-      </td>
+     <td className="px-4 py-3">
+  KSh {(product.selling_price ?? 0).toLocaleString()}
+</td>
+     <td className="px-4 py-3">
+  {product.quantity}
+</td>
 
       <td className="px-4 py-3">
         <Badge
-          variant={product.stock <= 5 ? "destructive" : "secondary"}
-        >
-          {product.stock <= 5 ? "Low Stock" : "In Stock"}
-        </Badge>
+  variant={product.quantity <= 5 ? "destructive" : "secondary"}
+>
+  {product.quantity <= 5 ? "Low Stock" : "In Stock"}
+</Badge>
       </td>
 
       <td className="px-4 py-3">

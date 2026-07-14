@@ -25,8 +25,8 @@ export default function AddProductDialog({ addProduct }) {
   resolver: zodResolver(productSchema),
 });
 
-const onSubmit = (data) => {
-  addProduct(data);
+const onSubmit = async (data) => {
+  await addProduct(data);
   console.log("Product Added:", data);
 };
   return (

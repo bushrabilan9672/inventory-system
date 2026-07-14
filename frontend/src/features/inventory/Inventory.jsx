@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import api from "../../services/api";
 
 import InventoryToolbar from "../../components/inventory/InventoryToolbar";
 import ProductTable from "../../components/inventory/ProductTable";
@@ -36,23 +38,41 @@ const initialProducts = [
 export default function Inventory() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
-  const [products, setProducts] = useState(initialProducts);
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+  fetchProducts();
+}, []);
 
+const fetchProducts = async () => {
+  try {
+    const response = await api.get("/products");
+    setProducts(response.data);
+  } catch (error) {
+    console.error("Error fetching products:", error);
+  }
+};
   // Add Product
-  const addProduct = (newProduct) => {
-    const product = {
-      id: Date.now(),
-      image: "https://placehold.co/80x80",
+  const addProduct = async (newProduct) => {
+  try {
+    await api.post("/products", {
       name: newProduct.name,
       sku: newProduct.sku,
-      category: newProduct.category || "General",
-      price: Number(newProduct.sellingPrice) || 0,
-      stock: Number(newProduct.quantity) || 0,
-      ...newProduct,
-    };
+      barcode: newProduct.barcode,
+      category: newProduct.category,
+      supplier: newProduct.supplier,
+      purchase_price: Number(newProduct.purchasePrice),
+      selling_price: Number(newProduct.sellingPrice),
+      quantity: Number(newProduct.quantity),
+      minimum_stock: Number(newProduct.minimumStock),
+      description: newProduct.description,
+    });
 
-    setProducts((prev) => [...prev, product]);
-  };
+    fetchProducts();
+
+  } catch (error) {
+    console.error("Error adding product:", error);
+  }
+};
 
   // Update Product
   const updateProduct = (updatedProduct) => {
