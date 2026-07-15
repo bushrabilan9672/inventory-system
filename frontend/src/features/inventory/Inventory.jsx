@@ -5,97 +5,88 @@ import api from "../../services/api";
 import InventoryToolbar from "../../components/inventory/InventoryToolbar";
 import ProductTable from "../../components/inventory/ProductTable";
 
-const initialProducts = [
-  {
-    id: 1,
-    image: "https://placehold.co/80x80",
-    name: "HP Laptop",
-    sku: "HP001",
-    category: "Electronics",
-    price: 65000,
-    stock: 12,
-  },
-  {
-    id: 2,
-    image: "https://placehold.co/80x80",
-    name: "Wireless Mouse",
-    sku: "MS002",
-    category: "Accessories",
-    price: 1200,
-    stock: 4,
-  },
-  {
-    id: 3,
-    image: "https://placehold.co/80x80",
-    name: "Office Chair",
-    sku: "CH003",
-    category: "Furniture",
-    price: 8500,
-    stock: 18,
-  },
-];
-
 export default function Inventory() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
   const [products, setProducts] = useState([]);
-  useEffect(() => {
-  fetchProducts();
-}, []);
 
-const fetchProducts = async () => {
-  try {
-    const response = await api.get("/products");
-    setProducts(response.data);
-  } catch (error) {
-    console.error("Error fetching products:", error);
-  }
-};
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  // Fetch Products
+  const fetchProducts = async () => {
+    try {
+      const response = await api.get("/products");
+      setProducts(response.data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
+
   // Add Product
   const addProduct = async (newProduct) => {
-  try {
-    await api.post("/products", {
-      name: newProduct.name,
-      sku: newProduct.sku,
-      barcode: newProduct.barcode,
-      category: newProduct.category,
-      supplier: newProduct.supplier,
-      purchase_price: Number(newProduct.purchasePrice),
-      selling_price: Number(newProduct.sellingPrice),
-      quantity: Number(newProduct.quantity),
-      minimum_stock: Number(newProduct.minimumStock),
-      description: newProduct.description,
-    });
+    try {
+      await api.post("/products", {
+        name: newProduct.name,
+        sku: newProduct.sku,
+        barcode: newProduct.barcode,
+        category: newProduct.category,
+        supplier: newProduct.supplier,
+        purchase_price: Number(newProduct.purchasePrice),
+        selling_price: Number(newProduct.sellingPrice),
+        quantity: Number(newProduct.quantity),
+        minimum_stock: Number(newProduct.minimumStock),
+        description: newProduct.description,
+        image: newProduct.image,
+      });
 
-    fetchProducts();
-
-  } catch (error) {
-    console.error("Error adding product:", error);
-  }
-};
+      fetchProducts();
+    } catch (error) {
+      console.error("Error adding product:", error);
+    }
+  };
 
   // Update Product
-  const updateProduct = (updatedProduct) => {
-    setProducts((prevProducts) =>
-      prevProducts.map((product) =>
-        product.id === updatedProduct.id
-          ? {
-              ...product,
-              ...updatedProduct,
-              price: Number(updatedProduct.sellingPrice) || product.price,
-              stock: Number(updatedProduct.quantity) || product.stock,
-            }
-          : product
-      )
-    );
+  const updateProduct = async (updatedProduct) => {
+    try {
+      await api.put(`/products/${updatedProduct.id}`, {
+        name: updatedProduct.name,
+        sku: updatedProduct.sku,
+        barcode: updatedProduct.barcode,
+        category: updatedProduct.category,
+        supplier: updatedProduct.supplier,
+        purchase_price: Number(updatedProduct.purchasePrice),
+        selling_price: Number(updatedProduct.sellingPrice),
+        quantity: Number(updatedProduct.quantity),
+        minimum_stock: Number(updatedProduct.minimumStock),
+        description: updatedProduct.description,
+        image: updatedProduct.image,
+      });
+
+      fetchProducts();
+    } catch (error) {
+      console.error("Error updating product:", error);
+    }
   };
 
   // Delete Product
-const deleteProduct = (id) => {
-  setProducts((prevProducts) =>
-    prevProducts.filter((product) => product.id !== id)
-  );
-};
+  const deleteProduct = async (id) => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this product?"
+    );
+
+    if (!confirmed) return;
+
+    try {
+      await api.delete(`/products/${id}`);
+      fetchProducts();
+    } catch (error) {
+      console.error("Error deleting product:", error);
+    }
+  };
+
+  // Filter Products
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.name
       .toLowerCase()
@@ -103,7 +94,8 @@ const deleteProduct = (id) => {
 
     const matchesCategory =
       category === "all" ||
-      product.category.toLowerCase() === category.toLowerCase();
+      (product.category || "").toLowerCase() ===
+        category.toLowerCase();
 
     return matchesSearch && matchesCategory;
   });
@@ -129,10 +121,10 @@ const deleteProduct = (id) => {
       />
 
       <ProductTable
-  products={filteredProducts}
-  updateProduct={updateProduct}
-  deleteProduct={deleteProduct}
-/>
+        products={filteredProducts}
+        updateProduct={updateProduct}
+        deleteProduct={deleteProduct}
+      />
     </div>
   );
 }

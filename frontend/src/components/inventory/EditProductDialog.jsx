@@ -28,8 +28,8 @@ export default function EditProductDialog({
     defaultValues: product,
   });
 
-  const onSubmit = (data) => {
-  updateProduct({
+  const onSubmit = async (data) => {
+  await updateProduct({
     ...product,
     ...data,
   });
