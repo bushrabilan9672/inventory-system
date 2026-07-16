@@ -26,8 +26,10 @@ export default function AddProductDialog({ addProduct }) {
 });
 
 const onSubmit = async (data) => {
+  console.log("FORM DATA:", data);
+  console.log("IMAGE:", data.image);
+
   await addProduct(data);
-  console.log("Product Added:", data);
 };
   return (
     <Dialog>

@@ -27,22 +27,39 @@ export default function Inventory() {
   // Add Product
   const addProduct = async (newProduct) => {
     try {
-      await api.post("/products", {
-        name: newProduct.name,
-        sku: newProduct.sku,
-        barcode: newProduct.barcode,
-        category: newProduct.category,
-        supplier: newProduct.supplier,
-        purchase_price: Number(newProduct.purchasePrice),
-        selling_price: Number(newProduct.sellingPrice),
-        quantity: Number(newProduct.quantity),
-        minimum_stock: Number(newProduct.minimumStock),
-        description: newProduct.description,
-        image: newProduct.image,
+      const formData = new FormData();
+
+      formData.append("name", newProduct.name);
+      formData.append("sku", newProduct.sku);
+      formData.append("barcode", newProduct.barcode || "");
+      formData.append("category", newProduct.category || "");
+      formData.append("supplier", newProduct.supplier || "");
+      formData.append("purchase_price", newProduct.purchasePrice);
+      formData.append("selling_price", newProduct.sellingPrice);
+      formData.append("quantity", newProduct.quantity);
+      formData.append("minimum_stock", newProduct.minimumStock);
+      formData.append("description", newProduct.description || "");
+
+      // Add image if selected
+      if (newProduct.image && newProduct.image.length > 0) {
+        formData.append("image", newProduct.image[0]);
+      }
+
+      await api.post("/products", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
 
       fetchProducts();
+
     } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+
       console.error("Error adding product:", error);
     }
   };

@@ -14,7 +14,11 @@ export default function ProductRow({
     <tr className="border-b hover:bg-slate-50 transition-colors">
       <td className="px-4 py-3">
         <img
-          src={product.image || "https://placehold.co/80x80"}
+         src={
+  product.image
+    ? `http://127.0.0.1:5000${product.image}`
+    : "https://placehold.co/80x80"
+}
           alt={product.name}
           className="h-12 w-12 rounded-lg object-cover border"
         />

@@ -152,6 +152,21 @@ export default function ProductForm({
     </p>
   )}
 </div>
+
+{/* Product Image */}
+<div>
+  <Label htmlFor="image">
+    Product Image
+  </Label>
+
+  <input
+    id="image"
+    type="file"
+    accept="image/*"
+    {...register("image")}
+    className="w-full rounded-md border border-gray-300 p-2"
+  />
+</div>
       {/* Description */}
       <div>
         <Label htmlFor="description">
