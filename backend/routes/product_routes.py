@@ -57,6 +57,35 @@ def update_product(id):
 
     return jsonify(product.to_dict())
 
+@product_bp.route("/dashboard", methods=["GET"])
+def dashboard_stats():
+    products = Product.query.all()
+
+    total_products = len(products)
+
+    low_stock = len(
+        [p for p in products if p.quantity <= p.minimum_stock]
+    )
+
+    total_categories = len(
+        set(
+            p.category
+            for p in products
+            if p.category
+        )
+    )
+
+    inventory_value = sum(
+        p.quantity * p.selling_price
+        for p in products
+    )
+
+    return jsonify({
+        "total_products": total_products,
+        "low_stock": low_stock,
+        "categories": total_categories,
+        "inventory_value": inventory_value
+    })
 @product_bp.route("/products/<int:id>", methods=["DELETE"])
 def delete_product(id):
     product = Product.query.get_or_404(id)

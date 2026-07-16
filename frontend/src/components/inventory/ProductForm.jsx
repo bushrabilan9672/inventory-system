@@ -44,6 +44,31 @@ export default function ProductForm({
           </p>
         )}
       </div>
+
+{/* Supplier */}
+<div>
+  <Label htmlFor="supplier">
+    Supplier
+  </Label>
+
+  <Input
+    id="supplier"
+    placeholder="Supplier name"
+    {...register("supplier")}
+  />
+</div>
+      {/* Category */}
+<div>
+  <Label htmlFor="category">
+    Category
+  </Label>
+
+  <Input
+    id="category"
+    placeholder="e.g. Electronics"
+    {...register("category")}
+  />
+</div>
       {/* Barcode */}
 <div>
   <Label htmlFor="barcode">
@@ -93,6 +118,20 @@ export default function ProductForm({
       {errors.sellingPrice.message}
     </p>
   )}
+</div>
+
+{/* Minimum Stock */}
+<div>
+  <Label htmlFor="minimumStock">
+    Minimum Stock
+  </Label>
+
+  <Input
+    type="number"
+    id="minimumStock"
+    placeholder="5"
+    {...register("minimumStock")}
+  />
 </div>
 {/* Quantity */}
 <div>

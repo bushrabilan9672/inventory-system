@@ -3,6 +3,7 @@ import { Badge } from "../ui/badge";
 import { Pencil, Trash2, Eye } from "lucide-react";
 import EditProductDialog from "./EditProductDialog";
 import DeleteProductDialog from "./DeleteProductDialog";
+import ViewProductDialog from "./ViewProductDialog";
 
 export default function ProductRow({
   product,
@@ -48,10 +49,9 @@ export default function ProductRow({
 
       <td className="px-4 py-3">
         <div className="flex gap-2">
-          <Button size="icon" variant="outline">
-            <Eye size={16} />
-          </Button>
-
+          <ViewProductDialog
+  product={product}
+/>
           <EditProductDialog
   product={product}
   updateProduct={updateProduct}
