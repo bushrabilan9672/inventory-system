@@ -1,44 +1,127 @@
-import ProductCard from "./ProductCard";
+import {
+  Card,
+  CardContent,
+} from "../../../../components/ui/card";
 
-export default function ProductGrid({
-  products,
-  addToCart,
+import { Button } from "../../../../components/ui/button";
+
+import {
+  Minus,
+  Plus,
+  Trash2,
+} from "lucide-react";
+
+export default function CartTable({
+  cart,
+  updateQuantity,
+  removeFromCart,
 }) {
-
-  if (products.length === 0) {
-
-    return (
-
-      <div className="rounded-xl border bg-white p-10 text-center text-slate-500">
-
-        No products found.
-
-      </div>
-
-    );
-
-  }
-
   return (
+    <Card>
 
-    <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3">
+      <CardContent className="p-5">
 
-      {products.map((product) => (
+        <h2 className="text-lg font-bold mb-4">
+          Shopping Cart
+        </h2>
 
-        <ProductCard
+        {cart.length === 0 ? (
 
-          key={product.id}
+          <div className="text-center py-8 text-slate-500">
+            No products added.
+          </div>
 
-          product={product}
+        ) : (
 
-          addToCart={addToCart}
+          <div className="space-y-4">
 
-        />
+            {cart.map((item) => (
 
-      ))}
+              <div
+                key={item.id}
+                className="border rounded-lg p-3"
+              >
 
-    </div>
+                <div className="flex justify-between">
 
+                  <div>
+
+                    <h3 className="font-semibold">
+                      {item.name}
+                    </h3>
+
+                    <p className="text-sm text-slate-500">
+                      KSh {Number(item.selling_price).toLocaleString()}
+                    </p>
+
+                  </div>
+
+                  <Button
+                    variant="destructive"
+                    size="icon"
+                    onClick={() => removeFromCart(item.id)}
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </Button>
+
+                </div>
+
+                <div className="flex items-center justify-between mt-4">
+
+                  <div className="flex items-center gap-2">
+
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      onClick={() =>
+                        updateQuantity(
+                          item.id,
+                          item.quantity - 1
+                        )
+                      }
+                    >
+                      <Minus className="w-4 h-4" />
+                    </Button>
+
+                    <span className="font-semibold w-8 text-center">
+                      {item.quantity}
+                    </span>
+
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      onClick={() =>
+                        updateQuantity(
+                          item.id,
+                          item.quantity + 1
+                        )
+                      }
+                    >
+                      <Plus className="w-4 h-4" />
+                    </Button>
+
+                  </div>
+
+                  <span className="font-bold text-green-600">
+                    KSh{" "}
+                    {(
+                      item.quantity *
+                      item.selling_price
+                    ).toLocaleString()}
+                  </span>
+
+                </div>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        )}
+
+      </CardContent>
+
+    </Card>
   );
-
 }

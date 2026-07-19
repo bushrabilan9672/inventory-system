@@ -1,37 +1,23 @@
 import api from "../../../services/api";
 
-const SalesAPI = {
-  // Sales
-  getSales() {
-    return api.get("/sales");
+const salesApi = {
+
+  async getProducts() {
+
+    const response = await api.get("/products");
+
+    return response.data;
+
   },
 
-  getSale(id) {
-    return api.get(`/sales/${id}`);
+  async createSale(data) {
+
+    const response = await api.post("/sales", data);
+
+    return response.data;
+
   },
 
-  createSale(data) {
-    return api.post("/sales", data);
-  },
-
-  deleteSale(id) {
-    return api.delete(`/sales/${id}`);
-  },
-
-  // Products
-  getProducts() {
-    return api.get("/products");
-  },
-
-  // Customers
-  getCustomers() {
-    return api.get("/customers");
-  },
-
-  // Dashboard
-  getDashboard() {
-    return api.get("/dashboard");
-  },
 };
 
-export default SalesAPI;
+export default salesApi;

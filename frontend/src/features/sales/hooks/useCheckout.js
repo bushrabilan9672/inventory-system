@@ -1,75 +1,97 @@
 import { useState } from "react";
-import toast from "react-hot-toast";
-
-import SalesAPI from "../services/salesApi";
+import salesApi from "../services/salesApi";
 
 export default function useCheckout(clearCart) {
-  const [loading, setLoading] = useState(false);
 
-  const checkout = async ({
-    customerId,
-    paymentMethod,
-    paymentStatus,
-    cart,
-    discount = 0,
-    tax = 0,
-    notes = "",
-    transactionReference = "",
-  }) => {
+  const [customerId, setCustomerId] = useState("");
+
+  const [paymentMethod, setPaymentMethod] = useState("Cash");
+
+  const [saleComplete, setSaleComplete] = useState(false);
+
+  const [invoiceNumber, setInvoiceNumber] = useState("");
+
+  async function checkout(cart) {
+
     if (cart.length === 0) {
-      toast.error("Cart is empty.");
-      return null;
+      alert("Cart is empty.");
+      return;
     }
 
     if (!customerId) {
-      toast.error("Please select a customer.");
-      return null;
+      alert("Please select a customer.");
+      return;
     }
 
     try {
-      setLoading(true);
 
       const payload = {
-        customer_id: customerId,
-        payment_method: paymentMethod,
-        payment_status: paymentStatus,
-        discount,
-        tax,
-        notes,
-        transaction_reference: transactionReference,
 
-        items: cart.map((item) => ({
+        customer_id: customerId,
+
+        payment_method: paymentMethod,
+
+        payment_status: "Completed",
+
+        discount: 0,
+
+        tax: 0,
+
+        notes: "",
+
+        items: cart.map(item => ({
           product_id: item.id,
           quantity: item.quantity,
         })),
+
       };
 
-      const { data } = await SalesAPI.createSale(payload);
+      const response = await salesApi.createSale(payload);
 
-      toast.success("Sale completed successfully!");
+      if (response.success) {
 
-      clearCart();
+        setInvoiceNumber(response.invoice);
 
-      return data;
+        setSaleComplete(true);
+
+        clearCart();
+
+      } else {
+
+        alert(response.message);
+
+      }
 
     } catch (error) {
 
-      toast.error(
-        error.response?.data?.message ||
-          "Unable to complete sale."
-      );
+      console.error(error);
 
-      return null;
-
-    } finally {
-
-      setLoading(false);
+      alert("Failed to complete sale.");
 
     }
-  };
+
+  }
+
+  function closeDialog() {
+    setSaleComplete(false);
+  }
 
   return {
+
+    customerId,
+    setCustomerId,
+
+    paymentMethod,
+    setPaymentMethod,
+
+    saleComplete,
+
+    invoiceNumber,
+
     checkout,
-    loading,
+
+    closeDialog,
+
   };
+
 }

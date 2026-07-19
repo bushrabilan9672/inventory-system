@@ -1,185 +1,149 @@
 import { useEffect, useState } from "react";
 
-import SalesAPI from "../services/salesApi";
+import ProductSearch from "../components/product/ProductSearch";
+import ProductGrid from "../components/product/ProductGrid";
+import POSHeader from "../components/layout/POSHeader";
+import POSStats from "../components/layout/POSStats";
+import CategoryFilter from "../components/product/CategoryFilter";
+import POSSidebar from "../components/layout/POSSidebar";
+import SaleCompleteDialog from "../components/dialogs/SaleCompleteDialog";
 
 import useCart from "../hooks/useCart";
 import useCheckout from "../hooks/useCheckout";
 
-import POSHeader from "../components/layout/POSHeader";
-
-import ProductSearch from "../components/product/ProductSearch";
-
-import ProductGrid from "../components/product/ProductGrid";
-
-import CartTable from "../components/cart/CartTable";
-
-import CartSummary from "../components/cart/CartSummary";
-
-import CustomerSelector from "../components/customer/CustomerSelector";
-
-import PaymentSelector from "../components/payment/PaymentSelector";
-
-import SaleCompleteDialog from "../components/dialogs/SaleCompleteDialog";
-
-import toast from "react-hot-toast";
+import salesApi from "../services/salesApi";
 
 export default function POSPage() {
   const [products, setProducts] = useState([]);
-
-  const [customers, setCustomers] = useState([]);
-
   const [search, setSearch] = useState("");
-
-  const [customerId, setCustomerId] = useState("");
-
-  const [paymentMethod, setPaymentMethod] =
-    useState("Cash");
-
-  const [paymentStatus, setPaymentStatus] =
-    useState("Completed");
-
-  const [saleResult, setSaleResult] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const {
     cart,
-
     addToCart,
-
     removeFromCart,
-
-    increaseQuantity,
-
-    decreaseQuantity,
-
+    updateQuantity,
     clearCart,
-
     subtotal,
-
-    tax,
-
-    discount,
-
-    total,
-
     totalItems,
   } = useCart();
 
-  const { checkout, loading } =
-    useCheckout(clearCart);
+  const {
+  customerId,
+  setCustomerId,
+  paymentMethod,
+  setPaymentMethod,
+  saleComplete,
+  invoiceNumber,
+  checkout,
+  closeDialog,
+} = useCheckout(clearCart);
 
   useEffect(() => {
-    loadData();
+    loadProducts();
   }, []);
 
-  async function loadData() {
-    try {
-      const [productsRes, customersRes] =
-        await Promise.all([
-          SalesAPI.getProducts(),
-          SalesAPI.getCustomers(),
-        ]);
+  async function loadProducts() {
+  try {
+    const data = await salesApi.getProducts();
 
-      setProducts(productsRes.data);
-
-      setCustomers(customersRes.data);
-
-    } catch (error) {
-      toast.error("Failed to load POS data.");
+    if (Array.isArray(data)) {
+      setProducts(data);
+    } else {
+      setProducts([]);
     }
+  } catch (error) {
+    console.log(error);
+
+    // Temporary demo products
+    setProducts([
+      {
+        id: 1,
+        name: "Laptop",
+        sku: "LP001",
+        quantity: 20,
+        minimum_stock: 5,
+        selling_price: 65000,
+        category: "Electronics",
+      },
+      {
+        id: 2,
+        name: "Wireless Mouse",
+        sku: "MS001",
+        quantity: 50,
+        minimum_stock: 10,
+        selling_price: 1500,
+        category: "Accessories",
+      },
+      {
+        id: 3,
+        name: "Keyboard",
+        sku: "KB001",
+        quantity: 15,
+        minimum_stock: 5,
+        selling_price: 2500,
+        category: "Accessories",
+      },
+    ]);
   }
+}
 
-  const filteredProducts =
-    products.filter((product) =>
-      product.name
-        .toLowerCase()
-        .includes(search.toLowerCase())
-    );
+  const filteredProducts = products.filter((product) => {
+    const matchesSearch = product.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
 
-  async function handleCheckout() {
-    const result = await checkout({
-      customerId,
+    const matchesCategory =
+      selectedCategory === "All" ||
+      product.category === selectedCategory;
 
-      paymentMethod,
-
-      paymentStatus,
-
-      cart,
-
-      discount,
-
-      tax,
-    });
-
-    if (result) {
-      setSaleResult(result);
-    }
-  }
+    return matchesSearch && matchesCategory;
+  });
 
   return (
-    <div className="space-y-6 p-6">
+    <>
+      <div className="space-y-6">
 
-      <POSHeader />
+        <POSHeader />
 
-      <div className="grid gap-6 xl:grid-cols-12">
+        <POSStats
+          totalItems={totalItems}
+          subtotal={subtotal}
+          products={products}
+        />
 
-        {/* Products */}
+        <ProductSearch
+          search={search}
+          setSearch={setSearch}
+        />
 
-        <div className="xl:col-span-5 space-y-4">
+        <CategoryFilter
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
 
-          <ProductSearch
-            search={search}
-            setSearch={setSearch}
-          />
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
 
-          <ProductGrid
-            products={filteredProducts}
-            addToCart={addToCart}
-          />
+          <div className="xl:col-span-2">
 
-        </div>
+            <ProductGrid
+              products={filteredProducts}
+              addToCart={addToCart}
+            />
 
-        {/* Cart */}
+          </div>
 
-        <div className="xl:col-span-4 space-y-4">
-
-          <CartTable
+          <POSSidebar
             cart={cart}
-            increaseQuantity={
-              increaseQuantity
-            }
-            decreaseQuantity={
-              decreaseQuantity
-            }
-            removeFromCart={
-              removeFromCart
-            }
-          />
-
-        </div>
-
-        {/* Checkout */}
-
-        <div className="xl:col-span-3 space-y-4">
-
-          <CustomerSelector
-            customers={customers}
-            customerId={customerId}
-            setCustomerId={setCustomerId}
-          />
-
-          <PaymentSelector
+            updateQuantity={updateQuantity}
+            removeFromCart={removeFromCart}
+           customerId={customerId}
+setCustomerId={setCustomerId}
             paymentMethod={paymentMethod}
             setPaymentMethod={setPaymentMethod}
-          />
-
-          <CartSummary
             subtotal={subtotal}
-            tax={tax}
-            discount={discount}
-            total={total}
             totalItems={totalItems}
-            loading={loading}
-            onCheckout={handleCheckout}
+           checkout={() => checkout(cart)}
           />
 
         </div>
@@ -187,9 +151,11 @@ export default function POSPage() {
       </div>
 
       <SaleCompleteDialog
-        sale={saleResult}
+        open={saleComplete}
+        onClose={closeDialog}
+        invoiceNumber={invoiceNumber}
+        total={subtotal}
       />
-
-    </div>
+    </>
   );
 }

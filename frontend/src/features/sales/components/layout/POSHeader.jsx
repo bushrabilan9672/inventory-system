@@ -1,84 +1,67 @@
-import { ShoppingCart, Receipt, CalendarDays } from "lucide-react";
-
-import { format } from "date-fns";
-
-import {
-  Card,
-  CardContent,
-} from "../../../../components/ui/card";
+import { ShoppingCart, Receipt, User, CalendarDays } from "lucide-react";
+import { Button } from "../../../../components/ui/button";
 
 export default function POSHeader() {
+  const today = new Date();
+
+  const date = today.toLocaleDateString("en-KE", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  const time = today.toLocaleTimeString("en-KE", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
   return (
-    <Card className="border-0 shadow-lg bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white">
+    <div className="bg-white rounded-xl shadow-md border p-6 flex flex-col lg:flex-row justify-between items-center gap-6">
 
-      <CardContent className="flex items-center justify-between py-6">
+      <div>
+        <div className="flex items-center gap-3">
 
-        <div>
+          <div className="bg-blue-100 p-3 rounded-xl">
+            <ShoppingCart className="text-blue-600 w-7 h-7" />
+          </div>
 
-          <div className="flex items-center gap-3">
+          <div>
+            <h1 className="text-3xl font-bold">
+              Point of Sale
+            </h1>
 
-            <ShoppingCart className="h-8 w-8" />
-
-            <div>
-
-              <h1 className="text-3xl font-bold">
-                Smart Inventory POS
-              </h1>
-
-              <p className="text-slate-300">
-                Production Sales Terminal
-              </p>
-
-            </div>
-
+            <p className="text-slate-500">
+              Smart Inventory Management System
+            </p>
           </div>
 
         </div>
+      </div>
 
-        <div className="flex gap-8">
+      <div className="flex flex-wrap gap-4 items-center">
 
-          <div className="text-right">
-
-            <div className="flex items-center gap-2 justify-end">
-
-              <Receipt className="h-5 w-5" />
-
-              <span className="text-sm">
-                Invoice
-              </span>
-
-            </div>
-
-            <p className="font-bold text-xl">
-              AUTO
-            </p>
-
-          </div>
-
-          <div className="text-right">
-
-            <div className="flex items-center gap-2 justify-end">
-
-              <CalendarDays className="h-5 w-5" />
-
-              <span className="text-sm">
-                Date
-              </span>
-
-            </div>
-
-            <p className="font-semibold">
-
-              {format(new Date(), "dd MMM yyyy")}
-
-            </p>
-
-          </div>
-
+        <div className="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-lg">
+          <CalendarDays className="w-4 h-4 text-slate-500" />
+          <span className="text-sm">{date}</span>
         </div>
 
-      </CardContent>
+        <div className="bg-slate-100 px-4 py-2 rounded-lg">
+          <span className="font-semibold">{time}</span>
+        </div>
 
-    </Card>
+        <div className="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-lg">
+          <User className="w-4 h-4" />
+          <span>Cashier</span>
+        </div>
+
+        <Button>
+          <Receipt className="mr-2 w-4 h-4" />
+          New Sale
+        </Button>
+
+      </div>
+
+    </div>
   );
 }

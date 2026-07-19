@@ -6,6 +6,7 @@ import Dashboard from "../../features/dashboard/Dashboard";
 import Inventory from "../../features/inventory/Inventory";
 import Supplier from "../../features/suppliers/Supplier";
 import Customer from "../../features/customers/Customer";
+import POSPage from "../../features/sales/pages/POSPage";
 
 export default function AppRouter() {
   return (
@@ -16,6 +17,7 @@ export default function AppRouter() {
           <Route path="/inventory" element={<Inventory />} />
           <Route path="/suppliers" element={<Supplier />} />
           <Route path="/customers" element={<Customer />} />
+          <Route path="/sales" element={<POSPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
