@@ -1,0 +1,80 @@
+2026-07-19 09:26:06,829 | WARNING |  * Debugger is active!
+2026-07-19 09:26:06,829 | INFO |  * Debugger PIN: 375-714-585
+2026-07-19 09:26:35,226 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/app.py', reloading
+2026-07-19 09:26:36,580 | WARNING |  * Debugger is active!
+2026-07-19 09:26:36,580 | INFO |  * Debugger PIN: 375-714-585
+2026-07-19 09:26:37,602 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/app.py', reloading
+2026-07-19 09:26:38,706 | WARNING |  * Debugger is active!
+2026-07-19 09:26:38,707 | INFO |  * Debugger PIN: 375-714-585
+2026-07-19 09:27:14,256 | INFO | 127.0.0.1 - - [19/Jul/2026 09:27:14] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:27:14,262 | INFO | 127.0.0.1 - - [19/Jul/2026 09:27:14] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:27:33,496 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-19 09:27:33,496 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-19 09:27:33,497 | INFO |  * Restarting with stat
+2026-07-19 09:27:34,334 | WARNING |  * Debugger is active!
+2026-07-19 09:27:34,334 | INFO |  * Debugger PIN: 375-714-585
+2026-07-19 09:38:22,432 | INFO | 127.0.0.1 - - [19/Jul/2026 09:38:22] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:38:22,436 | INFO | 127.0.0.1 - - [19/Jul/2026 09:38:22] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:39:24,475 | INFO | 127.0.0.1 - - [19/Jul/2026 09:39:24] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:39:24,480 | INFO | 127.0.0.1 - - [19/Jul/2026 09:39:24] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:39:50,076 | INFO | 127.0.0.1 - - [19/Jul/2026 09:39:50] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:39:50,081 | INFO | 127.0.0.1 - - [19/Jul/2026 09:39:50] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:47:03,565 | INFO | 127.0.0.1 - - [19/Jul/2026 09:47:03] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:47:03,569 | INFO | 127.0.0.1 - - [19/Jul/2026 09:47:03] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:47:04,046 | INFO | 127.0.0.1 - - [19/Jul/2026 09:47:04] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:47:04,051 | INFO | 127.0.0.1 - - [19/Jul/2026 09:47:04] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:50:49,554 | INFO | 127.0.0.1 - - [19/Jul/2026 09:50:49] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:50:49,559 | INFO | 127.0.0.1 - - [19/Jul/2026 09:50:49] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:50:50,139 | INFO | 127.0.0.1 - - [19/Jul/2026 09:50:50] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:50:50,146 | INFO | 127.0.0.1 - - [19/Jul/2026 09:50:50] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:52:43,433 | INFO | 127.0.0.1 - - [19/Jul/2026 09:52:43] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:52:43,438 | INFO | 127.0.0.1 - - [19/Jul/2026 09:52:43] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:56:24,717 | INFO | 127.0.0.1 - - [19/Jul/2026 09:56:24] "GET /products HTTP/1.1" 200 -
+2026-07-19 09:56:24,727 | INFO | 127.0.0.1 - - [19/Jul/2026 09:56:24] "GET /products HTTP/1.1" 200 -
+2026-07-19 10:38:38,711 | INFO | 127.0.0.1 - - [19/Jul/2026 10:38:38] "GET /products HTTP/1.1" 200 -
+2026-07-19 10:38:38,720 | INFO | 127.0.0.1 - - [19/Jul/2026 10:38:38] "GET /products HTTP/1.1" 200 -
+2026-07-19 10:54:13,666 | INFO | 127.0.0.1 - - [19/Jul/2026 10:54:13] "GET /products HTTP/1.1" 200 -
+2026-07-19 10:54:13,670 | INFO | 127.0.0.1 - - [19/Jul/2026 10:54:13] "GET /products HTTP/1.1" 200 -
+2026-07-19 10:59:49,687 | INFO | 127.0.0.1 - - [19/Jul/2026 10:59:49] "GET /products HTTP/1.1" 200 -
+2026-07-19 10:59:49,692 | INFO | 127.0.0.1 - - [19/Jul/2026 10:59:49] "GET /products HTTP/1.1" 200 -
+2026-07-19 10:59:54,539 | INFO | 127.0.0.1 - - [19/Jul/2026 10:59:54] "GET /dashboard HTTP/1.1" 200 -
+2026-07-19 10:59:54,551 | INFO | 127.0.0.1 - - [19/Jul/2026 10:59:54] "GET /dashboard HTTP/1.1" 200 -
+2026-07-19 11:13:38,210 | INFO | 127.0.0.1 - - [19/Jul/2026 11:13:38] "GET /products HTTP/1.1" 200 -
+2026-07-19 11:13:38,215 | INFO | 127.0.0.1 - - [19/Jul/2026 11:13:38] "GET /products HTTP/1.1" 200 -
+2026-07-19 11:13:40,015 | INFO | 127.0.0.1 - - [19/Jul/2026 11:13:40] "GET /dashboard HTTP/1.1" 200 -
+2026-07-19 11:13:40,026 | INFO | 127.0.0.1 - - [19/Jul/2026 11:13:40] "GET /dashboard HTTP/1.1" 200 -
+2026-07-19 11:25:07,464 | INFO | 127.0.0.1 - - [19/Jul/2026 11:25:07] "GET /dashboard HTTP/1.1" 200 -
+2026-07-19 11:25:07,470 | INFO | 127.0.0.1 - - [19/Jul/2026 11:25:07] "GET /dashboard HTTP/1.1" 200 -
+2026-07-19 11:25:17,734 | INFO | 127.0.0.1 - - [19/Jul/2026 11:25:17] "GET /products HTTP/1.1" 200 -
+2026-07-19 11:25:17,744 | INFO | 127.0.0.1 - - [19/Jul/2026 11:25:17] "GET /products HTTP/1.1" 200 -
+2026-07-19 11:25:27,787 | INFO | 127.0.0.1 - - [19/Jul/2026 11:25:27] "GET /suppliers HTTP/1.1" 200 -
+2026-07-19 11:25:27,798 | INFO | 127.0.0.1 - - [19/Jul/2026 11:25:27] "GET /suppliers HTTP/1.1" 200 -
+2026-07-19 11:35:01,477 | INFO | 127.0.0.1 - - [19/Jul/2026 11:35:01] "GET / HTTP/1.1" 200 -
+2026-07-19 11:38:28,973 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-19 11:38:28,973 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-19 11:38:28,974 | INFO |  * Restarting with stat
+2026-07-19 11:38:29,998 | WARNING |  * Debugger is active!
+2026-07-19 11:38:29,999 | INFO |  * Debugger PIN: 375-714-585
+2026-07-19 11:38:41,657 | INFO | 127.0.0.1 - - [19/Jul/2026 11:38:41] "GET / HTTP/1.1" 200 -
+2026-07-19 11:54:55,301 | INFO | 127.0.0.1 - - [19/Jul/2026 11:54:55] "GET /dashboard HTTP/1.1" 200 -
+2026-07-19 11:54:55,307 | INFO | 127.0.0.1 - - [19/Jul/2026 11:54:55] "GET /dashboard HTTP/1.1" 200 -
+2026-07-19 11:55:19,747 | INFO | 127.0.0.1 - - [19/Jul/2026 11:55:19] "GET /products HTTP/1.1" 200 -
+2026-07-19 11:55:19,759 | INFO | 127.0.0.1 - - [19/Jul/2026 11:55:19] "GET /products HTTP/1.1" 200 -
+2026-07-19 11:55:28,040 | INFO | 127.0.0.1 - - [19/Jul/2026 11:55:28] "GET /products HTTP/1.1" 200 -
+2026-07-19 11:55:28,054 | INFO | 127.0.0.1 - - [19/Jul/2026 11:55:28] "GET /products HTTP/1.1" 200 -
+2026-07-19 11:55:30,887 | INFO | 127.0.0.1 - - [19/Jul/2026 11:55:30] "GET /suppliers HTTP/1.1" 200 -
+2026-07-19 11:55:30,898 | INFO | 127.0.0.1 - - [19/Jul/2026 11:55:30] "GET /suppliers HTTP/1.1" 200 -
+2026-07-19 11:56:15,648 | INFO | 127.0.0.1 - - [19/Jul/2026 11:56:15] "GET /suppliers HTTP/1.1" 200 -
+2026-07-19 11:56:15,653 | INFO | 127.0.0.1 - - [19/Jul/2026 11:56:15] "GET /suppliers HTTP/1.1" 200 -
+2026-07-19 11:56:19,950 | INFO | 127.0.0.1 - - [19/Jul/2026 11:56:19] "GET /suppliers HTTP/1.1" 200 -
+2026-07-19 11:56:19,963 | INFO | 127.0.0.1 - - [19/Jul/2026 11:56:19] "GET /suppliers HTTP/1.1" 200 -
+2026-07-19 12:14:00,543 | INFO | 127.0.0.1 - - [19/Jul/2026 12:14:00] "GET /suppliers HTTP/1.1" 200 -
+2026-07-19 12:14:00,547 | INFO | 127.0.0.1 - - [19/Jul/2026 12:14:00] "GET /suppliers HTTP/1.1" 200 -
+2026-07-19 12:14:13,418 | INFO | 127.0.0.1 - - [19/Jul/2026 12:14:13] "GET /suppliers HTTP/1.1" 200 -
+2026-07-19 12:14:13,421 | INFO | 127.0.0.1 - - [19/Jul/2026 12:14:13] "GET /suppliers HTTP/1.1" 200 -
+2026-07-19 12:14:16,143 | INFO | 127.0.0.1 - - [19/Jul/2026 12:14:16] "GET /dashboard HTTP/1.1" 200 -
+2026-07-19 12:14:16,147 | INFO | 127.0.0.1 - - [19/Jul/2026 12:14:16] "GET /dashboard HTTP/1.1" 200 -
+2026-07-19 12:21:38,343 | INFO | 127.0.0.1 - - [19/Jul/2026 12:21:38] "GET /dashboard HTTP/1.1" 200 -
+2026-07-19 12:21:38,346 | INFO | 127.0.0.1 - - [19/Jul/2026 12:21:38] "GET /dashboard HTTP/1.1" 200 -

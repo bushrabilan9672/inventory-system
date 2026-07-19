@@ -4,6 +4,15 @@ from models.supplier import Supplier
 from routes.supplier_routes import supplier_bp
 from models.customer import Customer
 from routes.customer_routes import customer_bp
+from flask_migrate import Migrate
+from models.sale import Sale
+from models.sale_item import SaleItem
+from models.payment import Payment
+from models.sale import Sale
+from models.sale_item import SaleItem
+from models.payment import Payment
+
+from routes.sale_routes import sale_bp
 
 import os
 
@@ -21,9 +30,11 @@ app.config["UPLOAD_FOLDER"] = "uploads"
 CORS(app)
 
 db.init_app(app)
+migrate = Migrate(app, db)
 app.register_blueprint(product_bp)
 app.register_blueprint(supplier_bp)
 app.register_blueprint(customer_bp)
+app.register_blueprint(sale_bp)
 
 @app.route("/")
 def home():
@@ -43,7 +54,7 @@ def uploaded_file(filename):
 
 with app.app_context():
     os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
-    db.create_all()
+    
 
 
 if __name__ == "__main__":

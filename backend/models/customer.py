@@ -5,13 +5,31 @@ from datetime import datetime
 class Customer(db.Model):
     __tablename__ = "customers"
 
+    # =====================================
+    # Primary Key
+    # =====================================
     id = db.Column(db.Integer, primary_key=True)
 
-    full_name = db.Column(db.String(120), nullable=False)
+    # =====================================
+    # Customer Information
+    # =====================================
+    full_name = db.Column(
+        db.String(120),
+        nullable=False,
+        index=True,
+    )
 
-    phone = db.Column(db.String(20), unique=True)
+    phone = db.Column(
+        db.String(20),
+        unique=True,
+        index=True,
+    )
 
-    email = db.Column(db.String(120), unique=True)
+    email = db.Column(
+        db.String(120),
+        unique=True,
+        index=True,
+    )
 
     address = db.Column(db.Text)
 
@@ -19,39 +37,74 @@ class Customer(db.Model):
 
     customer_type = db.Column(
         db.String(30),
-        default="Walk-in"
+        default="Walk-in",
+        index=True,
     )
 
     tax_number = db.Column(db.String(50))
 
     notes = db.Column(db.Text)
 
+    # =====================================
+    # Business Information
+    # =====================================
     total_orders = db.Column(
         db.Integer,
-        default=0
+        default=0,
+        nullable=False,
     )
 
     total_spent = db.Column(
         db.Float,
-        default=0.0
+        default=0.0,
+        nullable=False,
     )
 
     outstanding_balance = db.Column(
         db.Float,
-        default=0.0
+        default=0.0,
+        nullable=False,
     )
 
+    credit_limit = db.Column(
+        db.Float,
+        default=0.0,
+        nullable=False,
+    )
+
+    is_active = db.Column(
+        db.Boolean,
+        default=True,
+        nullable=False,
+    )
+
+    # =====================================
+    # Dates
+    # =====================================
     created_at = db.Column(
         db.DateTime,
-        default=datetime.utcnow
+        default=datetime.utcnow,
     )
 
     updated_at = db.Column(
         db.DateTime,
         default=datetime.utcnow,
-        onupdate=datetime.utcnow
+        onupdate=datetime.utcnow,
     )
 
+    # =====================================
+    # Relationships
+    # =====================================
+    sales = db.relationship(
+        "Sale",
+        back_populates="customer",
+        lazy=True,
+        cascade="all",
+    )
+
+    # =====================================
+    # Convert to Dictionary
+    # =====================================
     def to_dict(self):
         return {
             "id": self.id,
@@ -66,6 +119,19 @@ class Customer(db.Model):
             "total_orders": self.total_orders,
             "total_spent": self.total_spent,
             "outstanding_balance": self.outstanding_balance,
-            "created_at": self.created_at.isoformat() if self.created_at else None,
-            "updated_at": self.updated_at.isoformat() if self.updated_at else None,
+            "credit_limit": self.credit_limit,
+            "is_active": self.is_active,
+            "created_at": (
+                self.created_at.isoformat()
+                if self.created_at
+                else None
+            ),
+            "updated_at": (
+                self.updated_at.isoformat()
+                if self.updated_at
+                else None
+            ),
         }
+
+    def __repr__(self):
+        return f"<Customer {self.full_name}>"
