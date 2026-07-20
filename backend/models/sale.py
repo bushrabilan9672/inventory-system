@@ -117,10 +117,11 @@ class Sale(db.Model):
             "invoice_number": self.invoice_number,
             "customer_id": self.customer_id,
             "customer_name": (
-                self.customer.name
-                if self.customer
-                else None
-            ),
+    self.customer.full_name
+    if self.customer
+    else None
+),
+            
             "subtotal": self.subtotal,
             "discount": self.discount,
             "tax": self.tax,

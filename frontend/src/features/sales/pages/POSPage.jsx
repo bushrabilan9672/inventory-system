@@ -14,6 +14,7 @@ import useCheckout from "../hooks/useCheckout";
 import salesApi from "../services/salesApi";
 
 export default function POSPage() {
+
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -29,79 +30,65 @@ export default function POSPage() {
   } = useCart();
 
   const {
-  customerId,
-  setCustomerId,
-  paymentMethod,
-  setPaymentMethod,
-  saleComplete,
-  invoiceNumber,
-  checkout,
-  closeDialog,
-} = useCheckout(clearCart);
+    customerId,
+    setCustomerId,
+    paymentMethod,
+    setPaymentMethod,
+    saleComplete,
+    invoiceNumber,
+    checkout,
+    closeDialog,
+  } = useCheckout(clearCart);
 
   useEffect(() => {
     loadProducts();
   }, []);
 
   async function loadProducts() {
-  try {
-    const data = await salesApi.getProducts();
 
-    if (Array.isArray(data)) {
-      setProducts(data);
-    } else {
+    try {
+
+      const data = await salesApi.getProducts();
+
+      if (Array.isArray(data)) {
+
+        setProducts(data);
+
+      } else {
+
+        setProducts([]);
+
+      }
+
+    } catch (error) {
+
+      console.error(error);
+
       setProducts([]);
-    }
-  } catch (error) {
-    console.log(error);
 
-    // Temporary demo products
-    setProducts([
-      {
-        id: 1,
-        name: "Laptop",
-        sku: "LP001",
-        quantity: 20,
-        minimum_stock: 5,
-        selling_price: 65000,
-        category: "Electronics",
-      },
-      {
-        id: 2,
-        name: "Wireless Mouse",
-        sku: "MS001",
-        quantity: 50,
-        minimum_stock: 10,
-        selling_price: 1500,
-        category: "Accessories",
-      },
-      {
-        id: 3,
-        name: "Keyboard",
-        sku: "KB001",
-        quantity: 15,
-        minimum_stock: 5,
-        selling_price: 2500,
-        category: "Accessories",
-      },
-    ]);
+    }
+
   }
-}
 
   const filteredProducts = products.filter((product) => {
-    const matchesSearch = product.name
-      .toLowerCase()
-      .includes(search.toLowerCase());
+
+    const matchesSearch =
+      product.name
+        .toLowerCase()
+        .includes(search.toLowerCase());
 
     const matchesCategory =
       selectedCategory === "All" ||
       product.category === selectedCategory;
 
     return matchesSearch && matchesCategory;
+
   });
 
   return (
+
     <>
+
       <div className="space-y-6">
 
         <POSHeader />
@@ -137,13 +124,13 @@ export default function POSPage() {
             cart={cart}
             updateQuantity={updateQuantity}
             removeFromCart={removeFromCart}
-           customerId={customerId}
-setCustomerId={setCustomerId}
+            customerId={customerId}
+            setCustomerId={setCustomerId}
             paymentMethod={paymentMethod}
             setPaymentMethod={setPaymentMethod}
             subtotal={subtotal}
             totalItems={totalItems}
-           checkout={() => checkout(cart)}
+            checkout={() => checkout(cart)}
           />
 
         </div>
@@ -154,8 +141,14 @@ setCustomerId={setCustomerId}
         open={saleComplete}
         onClose={closeDialog}
         invoiceNumber={invoiceNumber}
-        total={subtotal}
+        customer={`Customer #${customerId}`}
+        paymentMethod={paymentMethod}
+        cart={cart}
+        subtotal={subtotal}
       />
+
     </>
+
   );
+
 }

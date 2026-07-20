@@ -68,11 +68,11 @@ export default function CustomerSelector({
               {customers.map((customer) => (
 
                 <SelectItem
-                  key={customer.id}
-                  value={String(customer.id)}
-                >
-                  {customer.name}
-                </SelectItem>
+  key={customer.id}
+  value={String(customer.id)}
+>
+  {customer.full_name}
+</SelectItem>
 
               ))}
 
