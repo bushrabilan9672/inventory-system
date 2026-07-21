@@ -13,6 +13,7 @@ from models.sale_item import SaleItem
 from models.payment import Payment
 
 from routes.sale_routes import sale_bp
+from routes.dashboard_routes import dashboard_bp
 
 import os
 
@@ -20,6 +21,7 @@ from config import Config
 from database.db import db
 from models.product import Product
 from routes.product_routes import product_bp
+from models.user import User
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -35,6 +37,7 @@ app.register_blueprint(product_bp)
 app.register_blueprint(supplier_bp)
 app.register_blueprint(customer_bp)
 app.register_blueprint(sale_bp)
+app.register_blueprint(dashboard_bp)
 
 @app.route("/")
 def home():

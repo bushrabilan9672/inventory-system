@@ -1,62 +1,48 @@
 import {
-  Package,
+  Boxes,
   ShoppingCart,
   Users,
   Truck,
   BarChart3,
   ShieldCheck,
-  BellRing,
-  Receipt,
 } from "lucide-react";
 
 const features = [
   {
-    icon: Package,
-    title: "Inventory Management",
+    icon: Boxes,
+    title: "Smart Inventory",
     description:
-      "Manage products, categories, stock levels, barcodes and inventory value in real time.",
+      "Track stock levels in real time, receive low-stock alerts, and manage products effortlessly.",
   },
   {
     icon: ShoppingCart,
-    title: "Point of Sale",
+    title: "Modern POS",
     description:
-      "Fast checkout, automatic stock deduction, invoices and multiple payment methods.",
+      "Complete sales quickly, generate receipts, and manage transactions with a fast point-of-sale system.",
   },
   {
     icon: Users,
     title: "Customer Management",
     description:
-      "Maintain customer profiles, purchase history, loyalty information and outstanding balances.",
+      "Maintain customer records, purchase history, and build stronger customer relationships.",
   },
   {
     icon: Truck,
     title: "Supplier Management",
     description:
-      "Manage suppliers, purchase information, contacts and procurement history.",
-  },
-  {
-    icon: Receipt,
-    title: "Sales & Invoices",
-    description:
-      "Generate professional invoices and monitor every sale made by the business.",
+      "Organize supplier information, deliveries, and purchasing in one place.",
   },
   {
     icon: BarChart3,
-    title: "Reports & Analytics",
+    title: "Analytics & Reports",
     description:
-      "Generate business reports with sales, profits, stock movement and inventory performance.",
-  },
-  {
-    icon: BellRing,
-    title: "Low Stock Alerts",
-    description:
-      "Receive notifications when products reach their minimum stock level.",
+      "Generate insightful reports with charts, revenue analysis, inventory summaries, and sales trends.",
   },
   {
     icon: ShieldCheck,
-    title: "Secure Access",
+    title: "Secure & Reliable",
     description:
-      "Role-based authentication for administrators, managers and cashiers.",
+      "Role-based access, secure authentication, and reliable data storage keep your business protected.",
   },
 ];
 
@@ -64,62 +50,66 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="py-24 bg-gray-50"
+      className="bg-slate-50 py-24"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="mx-auto max-w-7xl px-6">
 
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
 
-          <span className="text-blue-600 font-semibold uppercase tracking-wider">
-            Features
+          <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+            Powerful Features
           </span>
 
-          <h2 className="mt-4 text-4xl font-bold text-gray-900">
-            Everything a Modern Business Needs
+          <h2 className="mt-6 text-5xl font-bold tracking-tight text-slate-900">
+            Everything You Need To Run
+            <span className="block text-blue-600">
+              Your Business
+            </span>
           </h2>
 
-          <p className="mt-6 text-gray-600 text-lg">
-            Smart Inventory combines inventory management,
-            customer management, supplier management,
-            point of sale and business analytics into one
-            powerful platform.
+          <p className="mt-6 text-lg leading-8 text-slate-600">
+            Inventra combines inventory management,
+            customer management, sales, suppliers,
+            analytics and reporting into one intelligent platform.
           </p>
 
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
-          {features.map((feature, index) => {
+          {features.map((feature) => {
+
             const Icon = feature.icon;
 
             return (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100"
-              >
-                <div className="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center mb-6">
 
-                  <Icon className="text-blue-600" size={28} />
+              <div
+                key={feature.title}
+                className="group rounded-3xl border bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-3 hover:border-blue-500 hover:shadow-2xl"
+              >
+
+                <div className="mb-6 inline-flex rounded-2xl bg-blue-100 p-4 transition group-hover:bg-blue-600">
+
+                  <Icon className="h-8 w-8 text-blue-600 group-hover:text-white" />
 
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3">
-
+                <h3 className="text-2xl font-bold text-slate-900">
                   {feature.title}
-
                 </h3>
 
-                <p className="text-gray-600 leading-7">
-
+                <p className="mt-4 leading-7 text-slate-600">
                   {feature.description}
-
                 </p>
 
               </div>
+
             );
+
           })}
 
         </div>
+
       </div>
     </section>
   );

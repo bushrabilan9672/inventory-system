@@ -1,176 +1,113 @@
-import {
-  ArrowRight,
-  PlayCircle,
-  Package,
-  Users,
-  ShoppingCart,
-  BarChart3,
-} from "lucide-react";
+import { Button } from "../../../components/ui/button";
+import { ArrowRight, PlayCircle, ShieldCheck } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-br from-blue-50 via-white to-indigo-100 py-20">
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
 
-        {/* Left Side */}
-        <div>
+      <div className="mx-auto max-w-7xl px-6 py-24 lg:flex lg:items-center lg:justify-between">
 
-          <span className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-6">
-            🚀 Modern Inventory ERP for Small Businesses
-          </span>
+        {/* Left */}
 
-          <h1 className="text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-            Manage Your Entire Business
-            <span className="text-blue-600"> From One Platform.</span>
+        <div className="max-w-2xl">
+
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
+
+            <ShieldCheck className="h-4 w-4" />
+
+            Trusted Inventory Platform
+
+          </div>
+
+          <h1 className="text-5xl font-extrabold leading-tight tracking-tight text-slate-900 lg:text-7xl">
+
+            Manage Your
+
+            <span className="block text-blue-600">
+
+              Business Smarter
+
+            </span>
+
+            with Inventra
+
           </h1>
 
-          <p className="mt-6 text-lg text-gray-600 leading-8">
-            Smart Inventory Management System helps businesses manage products,
-            customers, suppliers, sales, inventory, payments and reports
-            in real-time through one powerful dashboard.
+          <p className="mt-8 text-lg leading-8 text-slate-600">
+
+            Inventra helps businesses manage inventory, suppliers,
+            customers, sales, and reports from one modern platform.
+
+            Stay organized. Reduce stock losses. Increase profits.
+
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
 
-            <button className="flex items-center gap-2 bg-blue-600 text-white px-6 py-4 rounded-xl shadow-lg hover:bg-blue-700 transition">
-
+            <Button
+              size="lg"
+              className="gap-2 rounded-xl px-8"
+            >
               Get Started
 
-              <ArrowRight size={20} />
+              <ArrowRight className="h-5 w-5" />
 
-            </button>
+            </Button>
 
-            <button className="flex items-center gap-2 border border-gray-300 px-6 py-4 rounded-xl hover:bg-gray-100 transition">
-
-              <PlayCircle size={20} />
+            <Button
+              variant="outline"
+              size="lg"
+              className="gap-2 rounded-xl px-8"
+            >
+              <PlayCircle className="h-5 w-5" />
 
               Watch Demo
 
-            </button>
-
-          </div>
-
-          {/* Statistics */}
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-16">
-
-            <div>
-              <h2 className="text-3xl font-bold text-blue-600">500+</h2>
-              <p className="text-gray-500">Products</p>
-            </div>
-
-            <div>
-              <h2 className="text-3xl font-bold text-blue-600">2K+</h2>
-              <p className="text-gray-500">Sales</p>
-            </div>
-
-            <div>
-              <h2 className="text-3xl font-bold text-blue-600">800+</h2>
-              <p className="text-gray-500">Customers</p>
-            </div>
-
-            <div>
-              <h2 className="text-3xl font-bold text-blue-600">99%</h2>
-              <p className="text-gray-500">Accuracy</p>
-            </div>
+            </Button>
 
           </div>
 
         </div>
 
-        {/* Right Side */}
+        {/* Right */}
 
-        <div>
+        <div className="mt-16 lg:mt-0">
 
-          <div className="bg-white rounded-3xl shadow-2xl p-8 border">
+          <div className="rounded-3xl border bg-white p-8 shadow-2xl">
 
-            <div className="flex justify-between items-center mb-8">
+            <div className="mb-6 flex items-center justify-between">
 
-              <h2 className="text-xl font-bold">
-                Dashboard Overview
-              </h2>
+              <h3 className="font-semibold">
 
-              <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
-                Live
+                Inventra Dashboard
+
+              </h3>
+
+              <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
+
+                LIVE
+
               </span>
 
             </div>
 
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid gap-4">
 
-              <div className="rounded-2xl bg-blue-50 p-6">
-
-                <Package className="text-blue-600 mb-3" />
-
-                <p className="text-gray-500">Products</p>
-
-                <h3 className="text-3xl font-bold mt-2">
-                  1,248
-                </h3>
-
+              <div className="rounded-xl bg-blue-50 p-5">
+                📦 1,250 Products
               </div>
 
-              <div className="rounded-2xl bg-green-50 p-6">
-
-                <ShoppingCart className="text-green-600 mb-3" />
-
-                <p className="text-gray-500">
-                  Sales
-                </p>
-
-                <h3 className="text-3xl font-bold mt-2">
-                  845
-                </h3>
-
+              <div className="rounded-xl bg-emerald-50 p-5">
+                💰 KSh 2.5M Sales
               </div>
 
-              <div className="rounded-2xl bg-yellow-50 p-6">
-
-                <Users className="text-yellow-600 mb-3" />
-
-                <p className="text-gray-500">
-                  Customers
-                </p>
-
-                <h3 className="text-3xl font-bold mt-2">
-                  520
-                </h3>
-
+              <div className="rounded-xl bg-yellow-50 p-5">
+                📊 Reports Updated
               </div>
 
-              <div className="rounded-2xl bg-purple-50 p-6">
-
-                <BarChart3 className="text-purple-600 mb-3" />
-
-                <p className="text-gray-500">
-                  Revenue
-                </p>
-
-                <h3 className="text-3xl font-bold mt-2">
-                  KSh 2.8M
-                </h3>
-
+              <div className="rounded-xl bg-red-50 p-5">
+                ⚠️ 12 Low Stock Items
               </div>
-
-            </div>
-
-            <div className="mt-8 bg-gray-100 rounded-xl p-5">
-
-              <p className="text-gray-500 text-sm mb-2">
-
-                Inventory Performance
-
-              </p>
-
-              <div className="w-full h-3 rounded-full bg-gray-300 overflow-hidden">
-
-                <div className="w-4/5 h-full bg-blue-600 rounded-full"></div>
-
-              </div>
-
-              <p className="mt-2 text-sm text-gray-500">
-                Inventory Efficiency: <strong>82%</strong>
-              </p>
 
             </div>
 
@@ -179,6 +116,7 @@ export default function Hero() {
         </div>
 
       </div>
+
     </section>
   );
 }

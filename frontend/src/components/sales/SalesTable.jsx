@@ -23,10 +23,12 @@ import {
 
 import ViewSaleDialog from "./ViewSaleDialog";
 
-import salesApi from "../../features/sales/services/salesApi";
-
 export default function SalesTable({
+
   sales = [],
+
+  deleteSale,
+
 }) {
 
   const [selectedSale, setSelectedSale] = useState(null);
@@ -34,31 +36,10 @@ export default function SalesTable({
   const [openDialog, setOpenDialog] = useState(false);
 
   function viewSale(sale) {
+
     setSelectedSale(sale);
+
     setOpenDialog(true);
-  }
-
-  async function deleteSale(id) {
-
-    const confirmed = window.confirm(
-      "Are you sure you want to delete this sale?"
-    );
-
-    if (!confirmed) return;
-
-    try {
-
-      await salesApi.deleteSale(id);
-
-      window.location.reload();
-
-    } catch (error) {
-
-      console.error(error);
-
-      alert("Failed to delete sale.");
-
-    }
 
   }
 
@@ -87,7 +68,9 @@ export default function SalesTable({
               <TableHead>Date</TableHead>
 
               <TableHead className="text-right">
+
                 Actions
+
               </TableHead>
 
             </TableRow>
@@ -104,7 +87,9 @@ export default function SalesTable({
                   colSpan={7}
                   className="text-center py-8"
                 >
+
                   No sales found.
+
                 </TableCell>
 
               </TableRow>
@@ -116,30 +101,43 @@ export default function SalesTable({
                 <TableRow key={sale.id}>
 
                   <TableCell className="font-medium">
+
                     {sale.invoice_number}
+
                   </TableCell>
 
                   <TableCell>
-                    {sale.customer_name || "Walk-in Customer"}
+
+                    {sale.customer_name}
+
                   </TableCell>
 
                   <TableCell>
-                    {sale.payment_method || "-"}
-                  </TableCell>
 
-                  <TableCell>
-                    KSh{" "}
-                    {Number(
-                      sale.grand_total ?? 0
-                    ).toLocaleString()}
-                  </TableCell>
-
-                  <TableCell>
                     {sale.payment_status}
+
                   </TableCell>
 
                   <TableCell>
+
+                    KSh{" "}
+
+                    {Number(
+                      sale.grand_total
+                    ).toLocaleString()}
+
+                  </TableCell>
+
+                  <TableCell>
+
+                    {sale.sale_status}
+
+                  </TableCell>
+
+                  <TableCell>
+
                     {sale.created_at}
+
                   </TableCell>
 
                   <TableCell className="text-right space-x-2">
@@ -149,15 +147,21 @@ export default function SalesTable({
                       size="icon"
                       onClick={() => viewSale(sale)}
                     >
-                      <Eye className="h-4 w-4" />
+
+                      <Eye className="w-4 h-4" />
+
                     </Button>
 
                     <Button
                       variant="destructive"
                       size="icon"
-                      onClick={() => deleteSale(sale.id)}
+                      onClick={() =>
+                        deleteSale(sale.id)
+                      }
                     >
-                      <Trash2 className="h-4 w-4" />
+
+                      <Trash2 className="w-4 h-4" />
+
                     </Button>
 
                   </TableCell>
@@ -176,7 +180,9 @@ export default function SalesTable({
 
       <ViewSaleDialog
         open={openDialog}
-        onClose={() => setOpenDialog(false)}
+        onClose={() =>
+          setOpenDialog(false)
+        }
         sale={selectedSale}
       />
 

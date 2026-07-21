@@ -3,7 +3,7 @@ import api from "../../services/api";
 
 import {
   Package,
-  ShoppingCart,
+  Warehouse,
   DollarSign,
   AlertTriangle,
 } from "lucide-react";
@@ -14,108 +14,237 @@ import RecentSales from "../../components/dashboard/RecentSales";
 import LowStockAlert from "../../components/dashboard/LowStockAlert";
 
 export default function Dashboard() {
-  const [stats, setStats] = useState({
-    total_products: 0,
-    low_stock: 0,
-    categories: 0,
-    inventory_value: 0,
-  });
+
+  const [dashboard, setDashboard] = useState(null);
 
   useEffect(() => {
+
     fetchDashboard();
+
   }, []);
 
-  const fetchDashboard = async () => {
-    try {
-      const response = await api.get("/dashboard");
-      setStats(response.data);
-    } catch (error) {
-      console.error("Error fetching dashboard:", error);
-    }
-  };
+  async function fetchDashboard() {
 
-  const dashboardCards = [
+    try {
+
+      const response = await api.get("/dashboard");
+
+      setDashboard(response.data);
+
+    } catch (error) {
+
+      console.error(error);
+
+    }
+
+  }
+
+  if (!dashboard) {
+
+    return (
+
+      <div className="p-8">
+
+        Loading Dashboard...
+
+      </div>
+
+    );
+
+  }
+
+  const cards = [
+
     {
+
       title: "Total Products",
-      value: stats.total_products,
+
+      value: dashboard.inventory_summary.total_products,
+
       subtitle: "Products in inventory",
+
       icon: Package,
+
       color: "text-blue-600",
+
     },
+
     {
-      title: "Categories",
-      value: stats.categories,
-      subtitle: "Available categories",
-      icon: ShoppingCart,
-      color: "text-emerald-600",
+
+      title: "Total Stock",
+
+      value: dashboard.inventory_summary.total_stock,
+
+      subtitle: "Units available",
+
+      icon: Warehouse,
+
+      color: "text-green-600",
+
     },
+
     {
-      title: "Inventory Value",
-      value: `KSh ${stats.inventory_value.toLocaleString()}`,
-      subtitle: "Total inventory value",
+
+      title: "Total Sales",
+
+      value: `KSh ${Number(
+        dashboard.total_sales
+      ).toLocaleString()}`,
+
+      subtitle: "Overall revenue",
+
       icon: DollarSign,
+
       color: "text-yellow-600",
+
     },
+
     {
+
       title: "Low Stock",
-      value: stats.low_stock,
-      subtitle: "Needs attention",
+
+      value: dashboard.inventory_summary.low_stock,
+
+      subtitle: "Need restocking",
+
       icon: AlertTriangle,
+
       color: "text-red-600",
+
     },
+
   ];
 
   return (
+
     <div className="space-y-8">
-      {/* Heading */}
+
       <div>
-        <h1 className="text-3xl font-bold text-slate-900">
+
+        <h1 className="text-3xl font-bold">
+
           Dashboard
+
         </h1>
 
         <p className="text-slate-500">
-          Welcome back! Here's what's happening in your inventory.
+
+          Welcome back.
+
         </p>
+
       </div>
 
-      {/* Statistics */}
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {dashboardCards.map((item) => (
+
+        {cards.map((card) => (
+
           <StatCard
-            key={item.title}
-            title={item.title}
-            value={item.value}
-            subtitle={item.subtitle}
-            icon={item.icon}
-            color={item.color}
+
+            key={card.title}
+
+            {...card}
+
           />
+
         ))}
+
       </div>
 
-      {/* Chart + Recent Sales */}
       <div className="grid gap-6 lg:grid-cols-3">
+
         <div className="lg:col-span-2">
+
           <SalesChart />
+
         </div>
 
-        <RecentSales />
+        <RecentSales
+
+          sales={dashboard.recent_sales}
+
+        />
+
       </div>
 
-      {/* Bottom Section */}
       <div className="grid gap-6 lg:grid-cols-2">
-        <LowStockAlert />
+
+        <LowStockAlert
+
+          products={dashboard.low_stock_products}
+
+        />
 
         <div className="rounded-xl border bg-white p-6">
-          <h2 className="mb-4 text-xl font-semibold">
+
+          <h2 className="text-xl font-semibold">
+
             Inventory Summary
+
           </h2>
 
-          <p className="text-slate-500">
-            This section will display inventory analytics,
-            top-selling products, and category summaries.
-          </p>
+          <div className="mt-4 space-y-3">
+
+            <div>
+
+              Total Products:
+
+              <strong>
+
+                {" "}
+                {dashboard.inventory_summary.total_products}
+
+              </strong>
+
+            </div>
+
+            <div>
+
+              Total Stock:
+
+              <strong>
+
+                {" "}
+                {dashboard.inventory_summary.total_stock}
+
+              </strong>
+
+            </div>
+
+            <div>
+
+              Out of Stock:
+
+              <strong>
+
+                {" "}
+                {dashboard.inventory_summary.out_of_stock}
+
+              </strong>
+
+            </div>
+
+            <div>
+
+              Low Stock:
+
+              <strong>
+
+                {" "}
+                {dashboard.inventory_summary.low_stock}
+
+              </strong>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div>
+
     </div>
+
   );
+
 }

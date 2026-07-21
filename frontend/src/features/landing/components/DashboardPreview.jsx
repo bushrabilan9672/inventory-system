@@ -1,234 +1,233 @@
 import {
   Package,
   ShoppingCart,
-  Users,
   DollarSign,
   TrendingUp,
-  AlertTriangle,
+  Users,
 } from "lucide-react";
 
 export default function DashboardPreview() {
   return (
-    <section className="py-24 bg-white">
+    <section
+      id="dashboard"
+      className="bg-white py-28"
+    >
+      <div className="mx-auto max-w-7xl px-6">
 
-      <div className="max-w-7xl mx-auto px-6">
+        <div className="mb-16 text-center">
 
-        <div className="text-center mb-16">
-
-          <span className="text-blue-600 font-semibold uppercase tracking-wider">
+          <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
             Dashboard Preview
           </span>
 
-          <h2 className="text-4xl font-bold mt-4">
-            Powerful Business Dashboard
+          <h2 className="mt-6 text-5xl font-bold text-slate-900">
+            One Dashboard.
+            <span className="block text-blue-600">
+              Complete Business Control.
+            </span>
           </h2>
 
-          <p className="text-gray-600 mt-5 text-lg max-w-3xl mx-auto">
-            Monitor your inventory, sales, customers and business
-            performance from one centralized dashboard.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+            Monitor inventory, sales, suppliers,
+            customers and business performance from
+            one beautiful dashboard.
           </p>
 
         </div>
 
-        <div className="bg-gray-100 rounded-3xl shadow-2xl p-8">
+        <div className="overflow-hidden rounded-3xl border bg-white shadow-2xl">
 
-          {/* Top Cards */}
+          {/* Top Bar */}
 
-          <div className="grid lg:grid-cols-4 gap-6">
+          <div className="flex items-center justify-between border-b bg-slate-100 px-8 py-5">
 
-            <div className="bg-white rounded-2xl p-6 shadow">
+            <div>
 
-              <Package className="text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold">
+                Inventra Dashboard
+              </h3>
 
-              <p className="text-gray-500">
+              <p className="text-sm text-slate-500">
+                Business Overview
+              </p>
+
+            </div>
+
+            <div className="rounded-full bg-emerald-100 px-4 py-2 text-sm font-semibold text-emerald-700">
+              ● Live
+            </div>
+
+          </div>
+
+          <div className="grid gap-8 p-8 lg:grid-cols-4">
+
+            {/* KPI Cards */}
+
+            <div className="rounded-2xl bg-blue-50 p-6">
+
+              <Package className="mb-4 h-8 w-8 text-blue-600" />
+
+              <h4 className="text-3xl font-bold">
+                2,530
+              </h4>
+
+              <p className="text-slate-500">
                 Products
               </p>
 
-              <h3 className="text-3xl font-bold mt-2">
-                1,248
-              </h3>
-
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow">
+            <div className="rounded-2xl bg-emerald-50 p-6">
 
-              <ShoppingCart className="text-green-600 mb-4" />
+              <DollarSign className="mb-4 h-8 w-8 text-emerald-600" />
 
-              <p className="text-gray-500">
-                Sales
-              </p>
+              <h4 className="text-3xl font-bold">
+                KSh 4.2M
+              </h4>
 
-              <h3 className="text-3xl font-bold mt-2">
-                845
-              </h3>
-
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 shadow">
-
-              <Users className="text-yellow-600 mb-4" />
-
-              <p className="text-gray-500">
-                Customers
-              </p>
-
-              <h3 className="text-3xl font-bold mt-2">
-                520
-              </h3>
-
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 shadow">
-
-              <DollarSign className="text-purple-600 mb-4" />
-
-              <p className="text-gray-500">
+              <p className="text-slate-500">
                 Revenue
               </p>
 
-              <h3 className="text-3xl font-bold mt-2">
-                KSh 2.8M
-              </h3>
+            </div>
+
+            <div className="rounded-2xl bg-yellow-50 p-6">
+
+              <ShoppingCart className="mb-4 h-8 w-8 text-yellow-600" />
+
+              <h4 className="text-3xl font-bold">
+                1,245
+              </h4>
+
+              <p className="text-slate-500">
+                Sales
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl bg-red-50 p-6">
+
+              <TrendingUp className="mb-4 h-8 w-8 text-red-600" />
+
+              <h4 className="text-3xl font-bold">
+                +18%
+              </h4>
+
+              <p className="text-slate-500">
+                Growth
+              </p>
 
             </div>
 
           </div>
 
-          {/* Charts */}
+          {/* Bottom */}
 
-          <div className="grid lg:grid-cols-3 gap-8 mt-10">
+          <div className="grid gap-8 border-t p-8 lg:grid-cols-2">
 
-            {/* Sales */}
+            <div className="rounded-2xl bg-slate-50 p-6">
 
-            <div className="lg:col-span-2 bg-white rounded-2xl p-8 shadow">
+              <h4 className="mb-6 text-xl font-bold">
+                Recent Sales
+              </h4>
 
-              <div className="flex justify-between">
+              <div className="space-y-4">
 
-                <h3 className="font-bold text-xl">
+                {[
+                  "Laptop Pro",
+                  "HP Printer",
+                  "Gaming Mouse",
+                  "Office Chair",
+                ].map((item) => (
 
-                  Monthly Sales
+                  <div
+                    key={item}
+                    className="flex items-center justify-between"
+                  >
 
-                </h3>
+                    <div className="flex items-center gap-3">
 
-                <TrendingUp className="text-green-600" />
+                      <div className="rounded-full bg-blue-100 p-2">
 
-              </div>
+                        <Users className="h-5 w-5 text-blue-600" />
 
-              <div className="mt-8 space-y-5">
+                      </div>
 
-                <div>
+                      <span>{item}</span>
 
-                  <div className="flex justify-between mb-2">
+                    </div>
 
-                    <span>January</span>
-
-                    <span>80%</span>
-
-                  </div>
-
-                  <div className="h-3 rounded-full bg-gray-200">
-
-                    <div className="h-3 bg-blue-600 rounded-full w-4/5"></div>
-
-                  </div>
-
-                </div>
-
-                <div>
-
-                  <div className="flex justify-between mb-2">
-
-                    <span>February</span>
-
-                    <span>65%</span>
+                    <span className="font-semibold text-emerald-600">
+                      Paid
+                    </span>
 
                   </div>
 
-                  <div className="h-3 rounded-full bg-gray-200">
-
-                    <div className="h-3 bg-green-500 rounded-full w-2/3"></div>
-
-                  </div>
-
-                </div>
-
-                <div>
-
-                  <div className="flex justify-between mb-2">
-
-                    <span>March</span>
-
-                    <span>95%</span>
-
-                  </div>
-
-                  <div className="h-3 rounded-full bg-gray-200">
-
-                    <div className="h-3 bg-indigo-600 rounded-full w-11/12"></div>
-
-                  </div>
-
-                </div>
+                ))}
 
               </div>
 
             </div>
 
-            {/* Low Stock */}
+            <div className="rounded-2xl bg-slate-50 p-6">
 
-            <div className="bg-white rounded-2xl p-8 shadow">
+              <h4 className="mb-6 text-xl font-bold">
+                Inventory Status
+              </h4>
 
-              <div className="flex items-center gap-3">
+              <div className="space-y-5">
 
-                <AlertTriangle className="text-red-500" />
+                <div>
 
-                <h3 className="font-bold">
+                  <div className="mb-2 flex justify-between">
 
-                  Low Stock
+                    <span>In Stock</span>
 
-                </h3>
+                    <span>85%</span>
 
-              </div>
+                  </div>
 
-              <div className="mt-8 space-y-5">
+                  <div className="h-3 rounded-full bg-slate-200">
 
-                <div className="flex justify-between">
+                    <div className="h-3 w-[85%] rounded-full bg-emerald-500"></div>
 
-                  <span>Printer Ink</span>
-
-                  <span className="text-red-500 font-bold">
-                    2
-                  </span>
+                  </div>
 
                 </div>
 
-                <div className="flex justify-between">
+                <div>
 
-                  <span>USB Cable</span>
+                  <div className="mb-2 flex justify-between">
 
-                  <span className="text-orange-500 font-bold">
-                    5
-                  </span>
+                    <span>Low Stock</span>
 
-                </div>
+                    <span>10%</span>
 
-                <div className="flex justify-between">
+                  </div>
 
-                  <span>Notebook</span>
+                  <div className="h-3 rounded-full bg-slate-200">
 
-                  <span className="text-red-500 font-bold">
-                    1
-                  </span>
+                    <div className="h-3 w-[10%] rounded-full bg-yellow-500"></div>
+
+                  </div>
 
                 </div>
 
-                <div className="flex justify-between">
+                <div>
 
-                  <span>Mouse</span>
+                  <div className="mb-2 flex justify-between">
 
-                  <span className="text-orange-500 font-bold">
-                    4
-                  </span>
+                    <span>Out of Stock</span>
+
+                    <span>5%</span>
+
+                  </div>
+
+                  <div className="h-3 rounded-full bg-slate-200">
+
+                    <div className="h-3 w-[5%] rounded-full bg-red-500"></div>
+
+                  </div>
 
                 </div>
 
@@ -241,7 +240,6 @@ export default function DashboardPreview() {
         </div>
 
       </div>
-
     </section>
   );
 }

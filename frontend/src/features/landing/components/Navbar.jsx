@@ -1,104 +1,115 @@
-import { Menu, X, Boxes } from "lucide-react";
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "../../../components/ui/button";
+import {
+  Boxes,
+  Menu,
+} from "lucide-react";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-xl">
+
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 
         {/* Logo */}
-        <div className="flex items-center gap-3">
 
-          <div className="w-11 h-11 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md">
-            <Boxes size={24} />
+        <Link
+          to="/"
+          className="flex items-center gap-3"
+        >
+
+          <div className="rounded-2xl bg-blue-600 p-3 shadow-lg">
+
+            <Boxes className="h-7 w-7 text-white" />
+
           </div>
 
           <div>
-            <h1 className="font-bold text-lg text-gray-900">
-              Smart Inventory
+
+            <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">
+              Inventra
             </h1>
 
-            <p className="text-xs text-gray-500">
-              Inventory Management ERP
+            <p className="-mt-1 text-xs text-slate-500">
+              Smart Inventory Platform
             </p>
+
           </div>
 
-        </div>
+        </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-10">
+        {/* Desktop Menu */}
 
-          <a href="#features" className="text-gray-600 hover:text-blue-600">
+        <nav className="hidden items-center gap-10 font-medium text-slate-600 lg:flex">
+
+          <a
+            href="#features"
+            className="transition hover:text-blue-600"
+          >
             Features
           </a>
 
-          <a href="#modules" className="text-gray-600 hover:text-blue-600">
-            Modules
+          <a
+            href="#dashboard"
+            className="transition hover:text-blue-600"
+          >
+            Dashboard
           </a>
 
-          <a href="#statistics" className="text-gray-600 hover:text-blue-600">
-            Statistics
-          </a>
-
-          <a href="#faq" className="text-gray-600 hover:text-blue-600">
+          <a
+            href="#faq"
+            className="transition hover:text-blue-600"
+          >
             FAQ
           </a>
 
-          <a href="#contact" className="text-gray-600 hover:text-blue-600">
+          <a
+            href="#contact"
+            className="transition hover:text-blue-600"
+          >
             Contact
           </a>
 
         </nav>
 
-        {/* Desktop Buttons */}
-        <div className="hidden lg:flex items-center gap-4">
+        {/* Right Buttons */}
 
-          <button className="px-5 py-2 rounded-lg border border-blue-600 text-blue-600 hover:bg-blue-50 transition">
-            Login
-          </button>
+        <div className="hidden items-center gap-4 lg:flex">
 
-          <button className="px-5 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
-            Get Started
-          </button>
+          <Button
+            variant="ghost"
+            asChild
+          >
+            <Link to="/login">
+              Login
+            </Link>
+          </Button>
+
+          <Button
+            asChild
+            className="rounded-xl px-7"
+          >
+            <Link to="/login">
+              Get Started
+            </Link>
+          </Button>
 
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
+        {/* Mobile */}
+
+        <Button
+          variant="ghost"
+          size="icon"
           className="lg:hidden"
-          onClick={() => setOpen(!open)}
         >
-          {open ? <X size={28} /> : <Menu size={28} />}
-        </button>
+
+          <Menu className="h-6 w-6" />
+
+        </Button>
 
       </div>
 
-      {/* Mobile Menu */}
-      {open && (
-        <div className="lg:hidden bg-white border-t">
-
-          <div className="flex flex-col p-6 gap-5">
-
-            <a href="#features">Features</a>
-            <a href="#modules">Modules</a>
-            <a href="#statistics">Statistics</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-
-            <button className="mt-4 py-3 rounded-lg border border-blue-600 text-blue-600">
-              Login
-            </button>
-
-            <button className="py-3 rounded-lg bg-blue-600 text-white">
-              Get Started
-            </button>
-
-          </div>
-
-        </div>
-      )}
     </header>
   );
 }

@@ -143,36 +143,26 @@ def delete_product(id):
     })
 
 
+
 # ==========================
-# Dashboard Statistics
+# Low Stock Report
 # ==========================
-@product_bp.route("/dashboard", methods=["GET"])
-def dashboard_stats():
+@product_bp.route("/reports/low-stock", methods=["GET"])
+def low_stock_products():
 
     products = Product.query.all()
 
-    total_products = len(products)
-
-    low_stock = len(
-        [p for p in products if p.quantity <= p.minimum_stock]
-    )
-
-    total_categories = len(
-        set(
-            p.category
-            for p in products
-            if p.category
-        )
-    )
-
-    inventory_value = sum(
-        p.quantity * p.selling_price
+    low_stock = [
+        {
+            "id": p.id,
+            "name": p.name,
+            "sku": p.sku,
+            "quantity": p.quantity,
+            "minimum_stock": p.minimum_stock,
+            "category": p.category,
+        }
         for p in products
-    )
+        if p.quantity <= p.minimum_stock
+    ]
 
-    return jsonify({
-        "total_products": total_products,
-        "low_stock": low_stock,
-        "categories": total_categories,
-        "inventory_value": inventory_value,
-    })
+    return jsonify(low_stock)

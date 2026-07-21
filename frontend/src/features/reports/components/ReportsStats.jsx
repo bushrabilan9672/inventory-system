@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import {
   Card,
   CardContent,
@@ -5,13 +7,44 @@ import {
 
 import {
   DollarSign,
-  ShoppingCart,
   Package,
   AlertTriangle,
+  Boxes,
 } from "lucide-react";
 
+import reportsApi from "../services/reportsApi";
+
 export default function ReportsStats() {
+
+  const [stats, setStats] = useState({
+    inventory_value: 0,
+    total_products: 0,
+    low_stock: 0,
+    categories: 0,
+  });
+
+  useEffect(() => {
+    loadStats();
+  }, []);
+
+  async function loadStats() {
+
+    try {
+
+      const data = await reportsApi.getDashboardStats();
+
+      setStats(data);
+
+    } catch (error) {
+
+      console.error(error);
+
+    }
+
+  }
+
   return (
+
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
 
       <Card>
@@ -21,11 +54,13 @@ export default function ReportsStats() {
           <div>
 
             <p className="text-sm text-gray-500">
-              Today's Sales
+              Inventory Value
             </p>
 
-            <h2 className="text-3xl font-bold">
-              KSh 0
+            <h2 className="text-2xl font-bold">
+
+              KSh {Number(stats.inventory_value).toLocaleString()}
+
             </h2>
 
           </div>
@@ -43,16 +78,18 @@ export default function ReportsStats() {
           <div>
 
             <p className="text-sm text-gray-500">
-              Monthly Revenue
+              Products
             </p>
 
-            <h2 className="text-3xl font-bold">
-              KSh 0
+            <h2 className="text-2xl font-bold">
+
+              {stats.total_products}
+
             </h2>
 
           </div>
 
-          <ShoppingCart className="h-10 w-10 text-blue-600" />
+          <Package className="h-10 w-10 text-blue-600" />
 
         </CardContent>
 
@@ -65,16 +102,18 @@ export default function ReportsStats() {
           <div>
 
             <p className="text-sm text-gray-500">
-              Products Sold
+              Categories
             </p>
 
-            <h2 className="text-3xl font-bold">
-              0
+            <h2 className="text-2xl font-bold">
+
+              {stats.categories}
+
             </h2>
 
           </div>
 
-          <Package className="h-10 w-10 text-purple-600" />
+          <Boxes className="h-10 w-10 text-purple-600" />
 
         </CardContent>
 
@@ -90,8 +129,10 @@ export default function ReportsStats() {
               Low Stock
             </p>
 
-            <h2 className="text-3xl font-bold">
-              0
+            <h2 className="text-2xl font-bold">
+
+              {stats.low_stock}
+
             </h2>
 
           </div>
@@ -103,5 +144,7 @@ export default function ReportsStats() {
       </Card>
 
     </div>
+
   );
+
 }
