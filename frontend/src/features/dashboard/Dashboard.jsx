@@ -1,239 +1,147 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 
-import {
-  Package,
-  Warehouse,
-  DollarSign,
-  AlertTriangle,
-} from "lucide-react";
+import TopBar from "./components/TopBar";
+import WelcomeBanner from "./components/WelcomeBanner";
+import KPICards from "./components/KPICards";
 
-import StatCard from "../../components/dashboard/StatCard";
 import SalesChart from "../../components/dashboard/SalesChart";
 import RecentSales from "../../components/dashboard/RecentSales";
 import LowStockAlert from "../../components/dashboard/LowStockAlert";
+import QuickActions from "./components/QuickActions";
+import ActivityFeed from "./components/ActivityFeed";
+import SalesTrend from "./charts/SalesTrend";
+import InventoryTrend from "./charts/InventoryTrend";
 
 export default function Dashboard() {
 
   const [dashboard, setDashboard] = useState(null);
 
   useEffect(() => {
-
     fetchDashboard();
-
   }, []);
 
   async function fetchDashboard() {
-
     try {
-
       const response = await api.get("/dashboard");
-
       setDashboard(response.data);
-
     } catch (error) {
-
       console.error(error);
-
     }
-
   }
 
   if (!dashboard) {
-
     return (
-
-      <div className="p-8">
-
+      <div className="flex h-screen items-center justify-center text-xl font-semibold">
         Loading Dashboard...
-
       </div>
-
     );
-
   }
 
-  const cards = [
-
-    {
-
-      title: "Total Products",
-
-      value: dashboard.inventory_summary.total_products,
-
-      subtitle: "Products in inventory",
-
-      icon: Package,
-
-      color: "text-blue-600",
-
-    },
-
-    {
-
-      title: "Total Stock",
-
-      value: dashboard.inventory_summary.total_stock,
-
-      subtitle: "Units available",
-
-      icon: Warehouse,
-
-      color: "text-green-600",
-
-    },
-
-    {
-
-      title: "Total Sales",
-
-      value: `KSh ${Number(
-        dashboard.total_sales
-      ).toLocaleString()}`,
-
-      subtitle: "Overall revenue",
-
-      icon: DollarSign,
-
-      color: "text-yellow-600",
-
-    },
-
-    {
-
-      title: "Low Stock",
-
-      value: dashboard.inventory_summary.low_stock,
-
-      subtitle: "Need restocking",
-
-      icon: AlertTriangle,
-
-      color: "text-red-600",
-
-    },
-
-  ];
-
   return (
+    <div className="min-h-screen bg-slate-100">
 
-    <div className="space-y-8">
+      {/* Top Navigation */}
 
-      <div>
+      <TopBar />
 
-        <h1 className="text-3xl font-bold">
+      <div className="space-y-8 p-8">
 
-          Dashboard
+        {/* Welcome Banner */}
 
-        </h1>
+        <WelcomeBanner />
 
-        <p className="text-slate-500">
+        {/* KPI Cards */}
 
-          Welcome back.
+        <KPICards />
 
-        </p>
+        <div className="grid gap-6 lg:grid-cols-2">
 
-      </div>
+  <SalesTrend />
 
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+  <InventoryTrend />
 
-        {cards.map((card) => (
+</div>
 
-          <StatCard
+        {/* Charts */}
 
-            key={card.title}
+        <div className="grid gap-6 lg:grid-cols-3">
 
-            {...card}
+          <div className="lg:col-span-2">
 
+            <SalesChart />
+
+          </div>
+
+          <RecentSales
+            sales={dashboard.recent_sales}
           />
-
-        ))}
-
-      </div>
-
-      <div className="grid gap-6 lg:grid-cols-3">
-
-        <div className="lg:col-span-2">
-
-          <SalesChart />
 
         </div>
 
-        <RecentSales
+        {/* Bottom Section */}
 
-          sales={dashboard.recent_sales}
+        <div className="grid gap-6 lg:grid-cols-2">
 
-        />
+          <LowStockAlert
+            products={dashboard.low_stock_products}
+          />
 
-      </div>
+          <div className="rounded-3xl bg-white p-6 shadow-sm">
 
-      <div className="grid gap-6 lg:grid-cols-2">
+            <h2 className="text-2xl font-bold">
+              Inventory Summary
+            </h2>
 
-        <LowStockAlert
+            <div className="mt-6 space-y-4">
 
-          products={dashboard.low_stock_products}
+              <div className="flex justify-between border-b pb-3">
 
-        />
+                <span>Total Products</span>
 
-        <div className="rounded-xl border bg-white p-6">
+                <strong>
+                  {dashboard.inventory_summary.total_products}
+                </strong>
 
-          <h2 className="text-xl font-semibold">
+              </div>
 
-            Inventory Summary
+              <div className="flex justify-between border-b pb-3">
 
-          </h2>
+                <span>Total Stock</span>
 
-          <div className="mt-4 space-y-3">
+                <strong>
+                  {dashboard.inventory_summary.total_stock}
+                </strong>
 
-            <div>
+              </div>
 
-              Total Products:
+              <div className="flex justify-between border-b pb-3">
 
-              <strong>
+                <span>Out Of Stock</span>
 
-                {" "}
-                {dashboard.inventory_summary.total_products}
+                <strong className="text-red-600">
+                  {dashboard.inventory_summary.out_of_stock}
+                </strong>
 
-              </strong>
+              </div>
 
-            </div>
+              <div className="flex justify-between">
 
-            <div>
+                <span>Low Stock</span>
 
-              Total Stock:
+                <strong className="text-orange-500">
+                  {dashboard.inventory_summary.low_stock}
+                </strong>
 
-              <strong>
+                <div className="grid gap-6 lg:grid-cols-2">
 
-                {" "}
-                {dashboard.inventory_summary.total_stock}
+  <QuickActions />
 
-              </strong>
+  <ActivityFeed />
 
-            </div>
+</div>
 
-            <div>
-
-              Out of Stock:
-
-              <strong>
-
-                {" "}
-                {dashboard.inventory_summary.out_of_stock}
-
-              </strong>
-
-            </div>
-
-            <div>
-
-              Low Stock:
-
-              <strong>
-
-                {" "}
-                {dashboard.inventory_summary.low_stock}
-
-              </strong>
+              </div>
 
             </div>
 
@@ -244,7 +152,6 @@ export default function Dashboard() {
       </div>
 
     </div>
-
   );
 
 }

@@ -1,45 +1,90 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import AppLayout from "../../components/layout/AppLayout";
-
-import Dashboard from "../../features/dashboard/Dashboard";
-import Inventory from "../../features/inventory/Inventory";
-import Supplier from "../../features/suppliers/Supplier";
-import Customer from "../../features/customers/Customer";
-import POSPage from "../../features/sales/pages/POSPage";
-import Reports from "../../features/reports/pages/Reports";
-import ReceiptPage from "../../features/sales/pages/ReceiptPage";
-import SalesHistory from "../../features/sales/pages/SalesHistory";
 import Home from "../../features/landing/pages/Home";
 import Login from "../../features/auth/pages/Login";
+
+import AppLayout from "../../components/layout/AppLayout";
+import ProtectedRoute from "../../features/auth/components/ProtectedRoute";
+
+import Dashboard from "../../features/dashboard/Dashboard";
+
+import Products from "../../features/inventory/pages/Products";
+import AddProduct from "../../features/inventory/pages/AddProduct";
+
+import Supplier from "../../features/suppliers/Supplier";
+import Customer from "../../features/customers/Customer";
+
+import SalesHistory from "../../features/sales/pages/SalesHistory";
+import ReceiptPage from "../../features/sales/pages/ReceiptPage";
+
+import Reports from "../../features/reports/pages/Reports";
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
+
+        {/* Public Routes */}
+
         <Route
-  path="/login"
-  element={<Login />}
-/>
+          path="/"
+          element={<Home />}
+        />
 
-        <Route element={<AppLayout />}>
+        <Route
+          path="/login"
+          element={<Login />}
+        />
 
-         <Route path="/" element={<Home />} />
+        {/* Protected Routes */}
 
-          <Route path="/inventory" element={<Inventory />} />
+        <Route
+          element={
+            <ProtectedRoute>
+              <AppLayout />
+            </ProtectedRoute>
+          }
+        >
 
-          <Route path="/suppliers" element={<Supplier />} />
+          <Route
+            path="/dashboard"
+            element={<Dashboard />}
+          />
 
-          <Route path="/customers" element={<Customer />} />
+          <Route
+            path="/inventory"
+            element={<Products />}
+          />
 
-          <Route path="/sales" element={<SalesHistory />} />
+          <Route
+            path="/inventory/add"
+            element={<AddProduct />}
+          />
 
-          <Route path="/reports" element={<Reports />} />
+          <Route
+            path="/suppliers"
+            element={<Supplier />}
+          />
 
-         <Route
-  path="/sales/receipt/:id"
-  element={<ReceiptPage />}
-/>
+          <Route
+            path="/customers"
+            element={<Customer />}
+          />
+
+          <Route
+            path="/sales"
+            element={<SalesHistory />}
+          />
+
+          <Route
+            path="/reports"
+            element={<Reports />}
+          />
+
+          <Route
+            path="/sales/receipt/:id"
+            element={<ReceiptPage />}
+          />
 
         </Route>
 

@@ -1,5 +1,5 @@
 import {
-  Boxes,
+  Package,
   ShoppingCart,
   Users,
   Truck,
@@ -9,16 +9,16 @@ import {
 
 const features = [
   {
-    icon: Boxes,
-    title: "Smart Inventory",
+    icon: Package,
+    title: "Inventory Management",
     description:
-      "Track stock levels in real time, receive low-stock alerts, and manage products effortlessly.",
+      "Track stock levels, monitor inventory movements, and prevent stock shortages with real-time updates.",
   },
   {
     icon: ShoppingCart,
-    title: "Modern POS",
+    title: "Sales & POS",
     description:
-      "Complete sales quickly, generate receipts, and manage transactions with a fast point-of-sale system.",
+      "Process sales quickly with a modern Point of Sale system and generate digital receipts instantly.",
   },
   {
     icon: Users,
@@ -30,19 +30,19 @@ const features = [
     icon: Truck,
     title: "Supplier Management",
     description:
-      "Organize supplier information, deliveries, and purchasing in one place.",
+      "Organize supplier information, deliveries, and purchase orders in one place.",
   },
   {
     icon: BarChart3,
-    title: "Analytics & Reports",
+    title: "Reports & Analytics",
     description:
-      "Generate insightful reports with charts, revenue analysis, inventory summaries, and sales trends.",
+      "Visualize business performance using charts, reports, and real-time analytics.",
   },
   {
     icon: ShieldCheck,
     title: "Secure & Reliable",
     description:
-      "Role-based access, secure authentication, and reliable data storage keep your business protected.",
+      "User authentication, role management, and secure data storage keep your business protected.",
   },
 ];
 
@@ -54,28 +54,25 @@ export default function Features() {
     >
       <div className="mx-auto max-w-7xl px-6">
 
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <div className="text-center">
 
           <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-            Powerful Features
+            FEATURES
           </span>
 
-          <h2 className="mt-6 text-5xl font-bold tracking-tight text-slate-900">
-            Everything You Need To Run
-            <span className="block text-blue-600">
-              Your Business
-            </span>
+          <h2 className="mt-6 text-5xl font-bold text-slate-900">
+            Everything You Need
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            Inventra combines inventory management,
-            customer management, sales, suppliers,
-            analytics and reporting into one intelligent platform.
+          <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-500">
+            Inventra provides all the essential tools to help
+            businesses manage inventory, sales, suppliers,
+            customers, and business analytics efficiently.
           </p>
 
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
           {features.map((feature) => {
 
@@ -85,22 +82,26 @@ export default function Features() {
 
               <div
                 key={feature.title}
-                className="group rounded-3xl border bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-3 hover:border-blue-500 hover:shadow-2xl"
+                className="group rounded-3xl bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
               >
 
-                <div className="mb-6 inline-flex rounded-2xl bg-blue-100 p-4 transition group-hover:bg-blue-600">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100 text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white">
 
-                  <Icon className="h-8 w-8 text-blue-600 group-hover:text-white" />
+                  <Icon size={30} />
 
                 </div>
 
-                <h3 className="text-2xl font-bold text-slate-900">
+                <h3 className="mt-8 text-2xl font-bold text-slate-900">
                   {feature.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-slate-600">
+                <p className="mt-4 leading-7 text-slate-500">
                   {feature.description}
                 </p>
+
+                <button className="mt-8 font-semibold text-blue-600 transition hover:text-blue-800">
+                  Learn More →
+                </button>
 
               </div>
 

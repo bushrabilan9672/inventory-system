@@ -1,12 +1,68 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff, Lock, Mail } from "lucide-react";
 
 import { Button } from "../../../components/ui/button";
 import { Input } from "../../../components/ui/input";
 
+import authApi from "../services/authApi";
+import useAuth from "../hooks/useAuth";
+
 export default function LoginForm() {
 
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
   const [showPassword, setShowPassword] = useState(false);
+
+  const [email, setEmail] = useState("");
+
+  const [password, setPassword] = useState("");
+
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e) {
+
+    e.preventDefault();
+
+    try {
+
+      setLoading(true);
+
+      const response = await authApi.login({
+
+        email,
+
+        password,
+
+      });
+
+      login(
+  response.user,
+  response.token
+);
+
+navigate("/dashboard");
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert(
+
+        error.response?.data?.message ||
+
+        "Login failed."
+
+      );
+
+    } finally {
+
+      setLoading(false);
+
+    }
+
+  }
 
   return (
 
@@ -20,7 +76,10 @@ export default function LoginForm() {
         Sign in to continue to Inventra.
       </p>
 
-      <form className="mt-10 space-y-6">
+      <form
+        onSubmit={handleSubmit}
+        className="mt-10 space-y-6"
+      >
 
         <div>
 
@@ -34,7 +93,9 @@ export default function LoginForm() {
 
             <Input
               type="email"
-              placeholder="Enter your email"
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
+              placeholder="Email"
               className="pl-12 h-12"
             />
 
@@ -54,6 +115,8 @@ export default function LoginForm() {
 
             <Input
               type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e)=>setPassword(e.target.value)}
               placeholder="Password"
               className="pl-12 pr-12 h-12"
             />
@@ -64,9 +127,14 @@ export default function LoginForm() {
               className="absolute right-4 top-4"
             >
 
-              {showPassword
+              {
+
+                showPassword
+
                 ? <EyeOff size={18}/>
+
                 : <Eye size={18}/>
+
               }
 
             </button>
@@ -76,9 +144,20 @@ export default function LoginForm() {
         </div>
 
         <Button
+          type="submit"
           className="h-12 w-full rounded-xl"
         >
-          Sign In
+
+          {
+
+            loading
+
+            ? "Signing In..."
+
+            : "Sign In"
+
+          }
+
         </Button>
 
       </form>
