@@ -1,30 +1,99 @@
-import { Button } from "../../../components/ui/button";
+export default function ProductFilters({
 
-export default function ProductFilters() {
+  category,
+  setCategory,
+
+  supplier,
+  setSupplier,
+
+  sort,
+  setSort,
+
+  categories,
+
+  suppliers,
+
+}) {
 
   return (
 
-    <div className="flex flex-wrap gap-4">
+    <div className="grid gap-4 md:grid-cols-3">
 
-      <Button variant="outline">
-        All Categories
-      </Button>
+      {/* Category */}
 
-      <Button variant="outline">
-        All Brands
-      </Button>
+      <select
 
-      <Button variant="outline">
-        In Stock
-      </Button>
+        value={category}
 
-      <Button variant="outline">
-        Low Stock
-      </Button>
+        onChange={(e) => setCategory(e.target.value)}
 
-      <Button variant="outline">
-        Out Of Stock
-      </Button>
+        className="h-12 rounded-xl border border-slate-300 bg-white px-4"
+
+      >
+
+        <option value="">All Categories</option>
+
+        {categories.map((item) => (
+
+          <option
+            key={item}
+            value={item}
+          >
+            {item}
+          </option>
+
+        ))}
+
+      </select>
+
+      {/* Supplier */}
+
+      <select
+
+        value={supplier}
+
+        onChange={(e) => setSupplier(e.target.value)}
+
+        className="h-12 rounded-xl border border-slate-300 bg-white px-4"
+
+      >
+
+        <option value="">All Suppliers</option>
+
+        {suppliers.map((item) => (
+
+          <option
+            key={item}
+            value={item}
+          >
+            {item}
+          </option>
+
+        ))}
+
+      </select>
+
+      {/* Sort */}
+
+      <select
+
+        value={sort}
+
+        onChange={(e) => setSort(e.target.value)}
+
+        className="h-12 rounded-xl border border-slate-300 bg-white px-4"
+
+      >
+
+        <option value="">Sort By</option>
+
+        <option value="name">Product Name</option>
+
+        <option value="stock">Stock Quantity</option>
+
+        <option value="price">Selling Price</option>
+
+      </select>
 
     </div>
 

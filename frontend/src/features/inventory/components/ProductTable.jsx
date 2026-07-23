@@ -1,10 +1,22 @@
 import {
+  Eye,
   Pencil,
   Trash2,
-  Eye,
+  ArrowDownCircle,
+  ArrowUpCircle,
 } from "lucide-react";
 
-export default function ProductTable({ products }) {
+import { useNavigate } from "react-router-dom";
+
+export default function ProductTable({
+
+  products,
+
+  deleteProduct,
+
+}) {
+
+  const navigate = useNavigate();
 
   return (
 
@@ -65,13 +77,17 @@ export default function ProductTable({ products }) {
                   <div className="flex items-center gap-3">
 
                     <img
+
                       src={
                         product.image
                           ? `http://127.0.0.1:5000${product.image}`
                           : "https://placehold.co/60x60"
                       }
+
                       alt={product.name}
+
                       className="h-14 w-14 rounded-lg object-cover"
+
                     />
 
                     <div>
@@ -103,13 +119,21 @@ export default function ProductTable({ products }) {
                 <td>
 
                   <span
+
                     className={
+
                       product.quantity <= product.minimum_stock
+
                         ? "font-semibold text-red-600"
+
                         : "font-semibold text-green-600"
+
                     }
+
                   >
+
                     {product.quantity}
+
                   </span>
 
                 </td>
@@ -122,21 +146,86 @@ export default function ProductTable({ products }) {
 
                 <td>
 
-                  <div className="flex justify-center gap-4">
+                  <div className="flex justify-center gap-3">
+
+                    {/* View */}
 
                     <Eye
+
                       size={18}
+
                       className="cursor-pointer text-blue-600"
+
+                      onClick={() =>
+
+                        navigate(`/inventory/details/${product.id}`)
+
+                      }
+
                     />
+
+                    {/* Edit */}
 
                     <Pencil
+
                       size={18}
+
                       className="cursor-pointer text-green-600"
+
+                      onClick={() =>
+
+                        navigate(`/inventory/edit/${product.id}`)
+
+                      }
+
                     />
 
-                    <Trash2
+                    {/* Stock In */}
+
+                    <ArrowDownCircle
+
                       size={18}
+
+                      className="cursor-pointer text-emerald-600"
+
+                      onClick={() =>
+
+                        navigate(`/inventory/stock-in/${product.id}`)
+
+                      }
+
+                    />
+
+                    {/* Stock Out */}
+
+                    <ArrowUpCircle
+
+                      size={18}
+
+                      className="cursor-pointer text-orange-600"
+
+                      onClick={() =>
+
+                        navigate(`/inventory/stock-out/${product.id}`)
+
+                      }
+
+                    />
+
+                    {/* Delete */}
+
+                    <Trash2
+
+                      size={18}
+
                       className="cursor-pointer text-red-600"
+
+                      onClick={() =>
+
+                        deleteProduct(product.id)
+
+                      }
+
                     />
 
                   </div>

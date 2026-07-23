@@ -108,31 +108,145 @@ def update_product(id):
 
     product = Product.query.get_or_404(id)
 
-    data = request.get_json()
+    # --------------------------
+    # Check duplicate barcode
+    # --------------------------
 
-    product.name = data["name"]
-    product.sku = data["sku"]
-    product.barcode = data.get("barcode")
-    product.category = data.get("category")
-    product.supplier = data.get("supplier")
-    product.purchase_price = data.get("purchase_price", 0)
-    product.selling_price = data.get("selling_price", 0)
-    product.quantity = data.get("quantity", 0)
-    product.minimum_stock = data.get("minimum_stock", 0)
-    product.description = data.get("description")
-    product.image = data.get("image")
+    barcode = request.form.get("barcode")
 
-    try:
-        db.session.commit()
-        return jsonify(product.to_dict())
+    existing = Product.query.filter_by(barcode=barcode).first()
 
-    except IntegrityError:
-        db.session.rollback()
+    if existing and existing.id != id:
 
         return jsonify({
             "message": "Barcode already exists."
         }), 400
 
+    # ==========================
+# Stock In
+# ==========================
+@product_bp.route("/products/<int:id>/stock-in", methods=["POST"])
+def stock_in(id):
+
+    product = Product.query.get_or_404(id)
+
+    data = request.get_json()
+
+    quantity = int(data.get("quantity", 0))
+
+    if quantity <= 0:
+
+        return jsonify({
+            "message": "Quantity must be greater than zero."
+        }), 400
+
+    product.quantity += quantity
+
+    db.session.commit()
+
+    return jsonify(product.to_dict())
+
+
+# ==========================
+# Stock Out
+# ==========================
+@product_bp.route("/products/<int:id>/stock-out", methods=["POST"])
+def stock_out(id):
+
+    product = Product.query.get_or_404(id)
+
+    data = request.get_json()
+
+    quantity = int(data.get("quantity", 0))
+
+    if quantity <= 0:
+
+        return jsonify({
+            "message": "Quantity must be greater than zero."
+        }), 400
+
+    if quantity > product.quantity:
+
+        return jsonify({
+            "message": "Not enough stock."
+        }), 400
+
+    product.quantity -= quantity
+
+    db.session.commit()
+
+    return jsonify(product.to_dict())
+
+    # --------------------------
+    # Upload new image
+    # --------------------------
+
+    if "image" in request.files:
+
+        image = request.files["image"]
+
+        if image.filename != "":
+
+            filename = (
+                f"{uuid.uuid4().hex}_"
+                f"{secure_filename(image.filename)}"
+            )
+
+            image.save(
+
+                os.path.join(
+
+                    current_app.config["UPLOAD_FOLDER"],
+
+                    filename,
+
+                )
+
+            )
+
+            product.image = f"/uploads/{filename}"
+
+    # --------------------------
+    # Update fields
+    # --------------------------
+
+    product.name = request.form.get("name")
+    product.sku = request.form.get("sku")
+    product.barcode = barcode
+    product.category = request.form.get("category")
+    product.supplier = request.form.get("supplier")
+
+    product.purchase_price = float(
+        request.form.get("purchase_price", 0)
+    )
+
+    product.selling_price = float(
+        request.form.get("selling_price", 0)
+    )
+
+    product.quantity = int(
+        request.form.get("quantity", 0)
+    )
+
+    product.minimum_stock = int(
+        request.form.get("minimum_stock", 0)
+    )
+
+    product.description = request.form.get("description")
+
+    try:
+
+        db.session.commit()
+
+        return jsonify(product.to_dict())
+
+    except IntegrityError:
+
+        db.session.rollback()
+
+        return jsonify({
+            "message": "Barcode already exists."
+        }), 400
 
 # ==========================
 # Delete Product

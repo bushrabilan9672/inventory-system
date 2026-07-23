@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 import api from "../../services/api";
 
-import InventoryToolbar from "../../components/inventory/InventoryToolbar";
-import ProductTable from "../../components/inventory/ProductTable";
-
+import ProductSearch from "./components/ProductSearch";
+import ProductFilters from "./components/ProductFilters";
+import ProductTable from "./components/ProductTable";
 export default function Inventory() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");

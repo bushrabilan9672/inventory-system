@@ -18,6 +18,10 @@ import SalesHistory from "../../features/sales/pages/SalesHistory";
 import ReceiptPage from "../../features/sales/pages/ReceiptPage";
 
 import Reports from "../../features/reports/pages/Reports";
+import EditProduct from "../../features/inventory/pages/EditProduct";
+import ProductDetails from "../../features/inventory/pages/ProductDetails";
+import StockIn from "../../features/inventory/pages/StockIn";
+import StockOut from "../../features/inventory/pages/StockOut";
 
 export default function AppRouter() {
   return (
@@ -85,6 +89,23 @@ export default function AppRouter() {
             path="/sales/receipt/:id"
             element={<ReceiptPage />}
           />
+          <Route
+  path="/inventory/stock-in/:id"
+  element={<StockIn />}
+/>
+
+<Route
+  path="/inventory/stock-out/:id"
+  element={<StockOut />}
+/>
+          <Route
+  path="/inventory/edit/:id"
+  element={<EditProduct />}
+/>
+<Route
+  path="/inventory/details/:id"
+  element={<ProductDetails />}
+/>
 
         </Route>
 

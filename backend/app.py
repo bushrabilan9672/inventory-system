@@ -11,6 +11,7 @@ from models.payment import Payment
 from models.sale import Sale
 from models.sale_item import SaleItem
 from models.payment import Payment
+from models.stock_movement import StockMovement
 
 from routes.sale_routes import sale_bp
 from routes.dashboard_routes import dashboard_bp
