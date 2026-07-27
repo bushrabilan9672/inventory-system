@@ -5,6 +5,7 @@ from models.sale_item import SaleItem
 from models.payment import Payment
 from models.product import Product
 from models.customer import Customer
+from models.stock_movement import StockMovement
 
 from utils.invoice import generate_invoice_number
 from utils.logger import logger
@@ -17,7 +18,10 @@ class SaleService:
 
         try:
 
-            customer = Customer.query.get(data["customer_id"])
+            customer = db.session.get(
+                Customer,
+                data["customer_id"]
+            )
 
             if not customer:
                 return {
@@ -30,7 +34,10 @@ class SaleService:
             sale = Sale(
                 invoice_number=invoice_number,
                 customer_id=customer.id,
-                payment_status=data.get("payment_status", "Completed"),
+                payment_status=data.get(
+                    "payment_status",
+                    "Completed"
+                ),
                 discount=data.get("discount", 0),
                 tax=data.get("tax", 0),
             )
@@ -42,9 +49,13 @@ class SaleService:
 
             for item in data["items"]:
 
-                product = Product.query.get(item["product_id"])
+                product = db.session.get(
+                    Product,
+                    item["product_id"]
+                )
 
                 if not product:
+
                     db.session.rollback()
 
                     return {
@@ -53,6 +64,7 @@ class SaleService:
                     }
 
                 if product.quantity < item["quantity"]:
+
                     db.session.rollback()
 
                     return {
@@ -61,7 +73,8 @@ class SaleService:
                     }
 
                 line_total = (
-                    product.selling_price * item["quantity"]
+                    product.selling_price *
+                    item["quantity"]
                 )
 
                 subtotal += line_total
@@ -85,7 +98,17 @@ class SaleService:
 
                 db.session.add(sale_item)
 
+                # Reduce inventory
                 product.quantity -= item["quantity"]
+
+                # Record stock movement
+                movement = StockMovement(
+                    product_id=product.id,
+                    movement_type="OUT",
+                    quantity=item["quantity"],
+                )
+
+                db.session.add(movement)
 
             grand_total = (
                 subtotal
@@ -123,8 +146,9 @@ class SaleService:
 
             return {
                 "success": True,
-                "invoice": invoice_number,
                 "sale_id": sale.id,
+                "invoice_number": invoice_number,
+                "message": "Sale completed successfully."
             }
 
         except Exception as e:
@@ -145,10 +169,22 @@ class SaleService:
 
             for item in sale.sale_items:
 
-                product = Product.query.get(item.product_id)
+                product = db.session.get(
+                    Product,
+                    item.product_id
+                )
 
                 if product:
+
                     product.quantity += item.quantity
+
+                    movement = StockMovement(
+                        product_id=product.id,
+                        movement_type="IN",
+                        quantity=item.quantity,
+                    )
+
+                    db.session.add(movement)
 
             db.session.delete(sale)
 

@@ -1,59 +1,107 @@
-const activities = [
-  {
-    action: "John purchased HP EliteBook",
-    time: "2 min ago",
-  },
-  {
-    action: "Inventory updated",
-    time: "10 min ago",
-  },
-  {
-    action: "Supplier added",
-    time: "30 min ago",
-  },
-  {
-    action: "Monthly report generated",
-    time: "1 hour ago",
-  },
-];
+import {
+  ArrowDownCircle,
+  ArrowUpCircle,
+} from "lucide-react";
 
-export default function ActivityFeed() {
+export default function ActivityFeed({ activities = [] }) {
+
   return (
+
     <div className="rounded-3xl bg-white p-6 shadow-sm">
 
-      <h2 className="text-2xl font-bold">
-        Activity Timeline
-      </h2>
+      <div className="mb-6 flex items-center justify-between">
 
-      <div className="mt-6 space-y-5">
+        <h2 className="text-2xl font-bold">
 
-        {activities.map((activity, index) => (
+          Activity Timeline
 
-          <div
-            key={index}
-            className="flex items-start gap-4"
-          >
+        </h2>
 
-            <div className="mt-2 h-3 w-3 rounded-full bg-blue-600"></div>
+        <span className="text-sm text-slate-500">
 
-            <div>
+          Recent Activity
 
-              <p className="font-medium">
-                {activity.action}
-              </p>
-
-              <span className="text-sm text-slate-500">
-                {activity.time}
-              </span>
-
-            </div>
-
-          </div>
-
-        ))}
+        </span>
 
       </div>
 
+      {activities.length === 0 ? (
+
+        <div className="rounded-xl bg-slate-50 p-6 text-center">
+
+          <p className="text-slate-500">
+
+            No recent activity.
+
+          </p>
+
+        </div>
+
+      ) : (
+
+        <div className="space-y-5">
+
+          {activities.map((activity) => (
+
+            <div
+              key={activity.id}
+              className="flex items-start gap-4"
+            >
+
+              <div>
+
+                {activity.movement_type === "IN" ? (
+
+                  <ArrowDownCircle
+                    className="text-green-600"
+                    size={24}
+                  />
+
+                ) : (
+
+                  <ArrowUpCircle
+                    className="text-red-600"
+                    size={24}
+                  />
+
+                )}
+
+              </div>
+
+              <div className="flex-1">
+
+                <p className="font-semibold">
+
+                  {activity.product_name}
+
+                </p>
+
+                <p className="text-sm text-slate-600">
+
+                  {activity.movement_type === "IN"
+                    ? `Stock In (+${activity.quantity})`
+                    : `Stock Out (-${activity.quantity})`}
+
+                </p>
+
+                <p className="mt-1 text-xs text-slate-400">
+
+                  {activity.created_at}
+
+                </p>
+
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      )}
+
     </div>
+
   );
+
 }

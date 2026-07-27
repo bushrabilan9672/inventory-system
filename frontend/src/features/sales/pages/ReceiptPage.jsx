@@ -54,11 +54,13 @@ export default function ReceiptPage() {
 
   <DownloadPDFButton sale={sale} />
 
-  <PrintReceiptButton />
+  <PrintReceiptButton sale={sale} />
 
 </div>
 
-      <Receipt sale={sale} />
+      <div id="receipt">
+  <Receipt sale={sale} />
+</div>
 
     </div>
 

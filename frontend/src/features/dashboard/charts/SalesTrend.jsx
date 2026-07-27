@@ -8,40 +8,77 @@ import {
   YAxis,
 } from "recharts";
 
-const data = [
-  { month: "Jan", sales: 120000 },
-  { month: "Feb", sales: 180000 },
-  { month: "Mar", sales: 150000 },
-  { month: "Apr", sales: 230000 },
-  { month: "May", sales: 280000 },
-  { month: "Jun", sales: 320000 },
-];
+export default function SalesTrend({ data = [] }) {
 
-export default function SalesTrend() {
   return (
+
     <div className="rounded-3xl bg-white p-6 shadow-sm">
 
-      <h2 className="mb-6 text-2xl font-bold">
-        Sales Trend
-      </h2>
+      <div className="mb-6 flex items-center justify-between">
+
+        <h2 className="text-2xl font-bold">
+
+          Sales Trend
+
+        </h2>
+
+        <span className="text-sm text-slate-500">
+
+          Last 6 Sales
+
+        </span>
+
+      </div>
 
       <ResponsiveContainer width="100%" height={320}>
 
         <AreaChart data={data}>
 
+          <defs>
+
+            <linearGradient
+              id="salesGradient"
+              x1="0"
+              y1="0"
+              x2="0"
+              y2="1"
+            >
+
+              <stop
+                offset="5%"
+                stopColor="#10b981"
+                stopOpacity={0.8}
+              />
+
+              <stop
+                offset="95%"
+                stopColor="#10b981"
+                stopOpacity={0}
+              />
+
+            </linearGradient>
+
+          </defs>
+
           <CartesianGrid strokeDasharray="3 3" />
 
-          <XAxis dataKey="month" />
+          <XAxis dataKey="date" />
 
           <YAxis />
 
-          <Tooltip />
+          <Tooltip
+            formatter={(value) => [
+              `KSh ${Number(value).toLocaleString()}`,
+              "Sales",
+            ]}
+          />
 
           <Area
             type="monotone"
             dataKey="sales"
-            stroke="#2563eb"
-            fill="#93c5fd"
+            stroke="#10b981"
+            strokeWidth={3}
+            fill="url(#salesGradient)"
           />
 
         </AreaChart>
@@ -49,5 +86,7 @@ export default function SalesTrend() {
       </ResponsiveContainer>
 
     </div>
+
   );
+
 }

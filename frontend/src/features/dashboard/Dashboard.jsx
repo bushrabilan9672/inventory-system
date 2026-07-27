@@ -8,8 +8,10 @@ import KPICards from "./components/KPICards";
 import SalesChart from "../../components/dashboard/SalesChart";
 import RecentSales from "../../components/dashboard/RecentSales";
 import LowStockAlert from "../../components/dashboard/LowStockAlert";
+
 import QuickActions from "./components/QuickActions";
 import ActivityFeed from "./components/ActivityFeed";
+
 import SalesTrend from "./charts/SalesTrend";
 import InventoryTrend from "./charts/InventoryTrend";
 
@@ -23,47 +25,53 @@ export default function Dashboard() {
 
   async function fetchDashboard() {
     try {
+
       const response = await api.get("/dashboard");
+
       setDashboard(response.data);
+
     } catch (error) {
+
       console.error(error);
+
     }
   }
 
   if (!dashboard) {
+
     return (
+
       <div className="flex h-screen items-center justify-center text-xl font-semibold">
+
         Loading Dashboard...
+
       </div>
+
     );
+
   }
 
   return (
-    <div className="min-h-screen bg-slate-100">
 
-      {/* Top Navigation */}
+    <div className="min-h-screen bg-slate-100">
 
       <TopBar />
 
       <div className="space-y-8 p-8">
 
-        {/* Welcome Banner */}
-
         <WelcomeBanner />
 
-        {/* KPI Cards */}
-
-        <KPICards />
+        <KPICards kpis={dashboard.kpis} />
+        {/* Trend Charts */}
 
         <div className="grid gap-6 lg:grid-cols-2">
 
-  <SalesTrend />
+          <SalesTrend data={dashboard.sales_chart} />
+          <InventoryTrend />
 
-  <InventoryTrend />
+        </div>
 
-</div>
-
-        {/* Charts */}
+        {/* Sales */}
 
         <div className="grid gap-6 lg:grid-cols-3">
 
@@ -74,23 +82,29 @@ export default function Dashboard() {
           </div>
 
           <RecentSales
+
             sales={dashboard.recent_sales}
+
           />
 
         </div>
 
-        {/* Bottom Section */}
+        <InventoryTrend data={dashboard.inventory_chart} />
 
         <div className="grid gap-6 lg:grid-cols-2">
 
           <LowStockAlert
+
             products={dashboard.low_stock_products}
+
           />
 
           <div className="rounded-3xl bg-white p-6 shadow-sm">
 
             <h2 className="text-2xl font-bold">
+
               Inventory Summary
+
             </h2>
 
             <div className="mt-6 space-y-4">
@@ -100,7 +114,9 @@ export default function Dashboard() {
                 <span>Total Products</span>
 
                 <strong>
+
                   {dashboard.inventory_summary.total_products}
+
                 </strong>
 
               </div>
@@ -110,7 +126,9 @@ export default function Dashboard() {
                 <span>Total Stock</span>
 
                 <strong>
+
                   {dashboard.inventory_summary.total_stock}
+
                 </strong>
 
               </div>
@@ -120,7 +138,9 @@ export default function Dashboard() {
                 <span>Out Of Stock</span>
 
                 <strong className="text-red-600">
+
                   {dashboard.inventory_summary.out_of_stock}
+
                 </strong>
 
               </div>
@@ -130,16 +150,10 @@ export default function Dashboard() {
                 <span>Low Stock</span>
 
                 <strong className="text-orange-500">
+
                   {dashboard.inventory_summary.low_stock}
+
                 </strong>
-
-                <div className="grid gap-6 lg:grid-cols-2">
-
-  <QuickActions />
-
-  <ActivityFeed />
-
-</div>
 
               </div>
 
@@ -149,9 +163,21 @@ export default function Dashboard() {
 
         </div>
 
+        {/* Bottom Widgets */}
+
+        <div className="grid gap-6 lg:grid-cols-2">
+
+          <QuickActions />
+
+          <ActivityFeed
+  activities={dashboard.recent_activity}
+/>
+        </div>
+
       </div>
 
     </div>
+
   );
 
 }

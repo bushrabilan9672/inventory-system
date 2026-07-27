@@ -1919,3 +1919,525 @@
 2026-07-24 01:20:46,231 | INFO | 127.0.0.1 - - [24/Jul/2026 01:20:46] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
 2026-07-24 01:20:46,233 | INFO | 127.0.0.1 - - [24/Jul/2026 01:20:46] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
 2026-07-24 01:20:46,234 | INFO | 127.0.0.1 - - [24/Jul/2026 01:20:46] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-24 01:23:21,226 | INFO | 127.0.0.1 - - [24/Jul/2026 01:23:21] "GET /products HTTP/1.1" 200 -
+2026-07-24 01:23:21,231 | INFO | 127.0.0.1 - - [24/Jul/2026 01:23:21] "GET /products HTTP/1.1" 200 -
+2026-07-24 01:23:21,271 | INFO | 127.0.0.1 - - [24/Jul/2026 01:23:21] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-24 01:23:21,281 | INFO | 127.0.0.1 - - [24/Jul/2026 01:23:21] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-24 01:23:21,286 | INFO | 127.0.0.1 - - [24/Jul/2026 01:23:21] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-24 01:28:08,273 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/routes/product_routes.py', reloading
+2026-07-24 01:28:08,551 | INFO |  * Restarting with stat
+2026-07-24 01:28:09,672 | WARNING |  * Debugger is active!
+2026-07-24 01:28:09,672 | INFO |  * Debugger PIN: 119-658-171
+2026-07-24 01:28:10,695 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/routes/product_routes.py', reloading
+2026-07-24 01:28:10,871 | INFO |  * Restarting with stat
+2026-07-24 01:28:11,863 | WARNING |  * Debugger is active!
+2026-07-24 01:28:11,864 | INFO |  * Debugger PIN: 119-658-171
+2026-07-24 01:33:43,882 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/routes/product_routes.py', reloading
+2026-07-24 01:33:44,130 | INFO |  * Restarting with stat
+2026-07-24 01:34:58,122 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-24 01:34:58,123 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-24 01:34:58,124 | INFO |  * Restarting with stat
+2026-07-24 01:34:59,353 | WARNING |  * Debugger is active!
+2026-07-24 01:34:59,354 | INFO |  * Debugger PIN: 119-658-171
+2026-07-24 01:35:11,210 | INFO | 127.0.0.1 - - [24/Jul/2026 01:35:11] "GET /products HTTP/1.1" 200 -
+2026-07-24 01:35:11,216 | INFO | 127.0.0.1 - - [24/Jul/2026 01:35:11] "GET /products HTTP/1.1" 200 -
+2026-07-24 01:35:11,240 | INFO | 127.0.0.1 - - [24/Jul/2026 01:35:11] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-24 01:35:11,243 | INFO | 127.0.0.1 - - [24/Jul/2026 01:35:11] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-24 01:35:11,248 | INFO | 127.0.0.1 - - [24/Jul/2026 01:35:11] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-24 01:51:22,065 | INFO | 127.0.0.1 - - [24/Jul/2026 01:51:22] "GET /products HTTP/1.1" 200 -
+2026-07-24 01:51:22,070 | INFO | 127.0.0.1 - - [24/Jul/2026 01:51:22] "GET /products HTTP/1.1" 200 -
+2026-07-24 01:51:22,101 | INFO | 127.0.0.1 - - [24/Jul/2026 01:51:22] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-24 01:51:22,109 | INFO | 127.0.0.1 - - [24/Jul/2026 01:51:22] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-24 01:51:22,114 | INFO | 127.0.0.1 - - [24/Jul/2026 01:51:22] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-24 01:51:36,168 | INFO | 127.0.0.1 - - [24/Jul/2026 01:51:36] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-24 01:51:36,182 | INFO | 127.0.0.1 - - [24/Jul/2026 01:51:36] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-24 01:52:16,196 | INFO | 127.0.0.1 - - [24/Jul/2026 01:52:16] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-24 01:52:16,202 | INFO | 127.0.0.1 - - [24/Jul/2026 01:52:16] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-25 10:39:37,181 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-25 10:39:37,182 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-25 10:39:37,184 | INFO |  * Restarting with stat
+2026-07-25 10:39:38,187 | WARNING |  * Debugger is active!
+2026-07-25 10:39:38,290 | INFO |  * Debugger PIN: 481-963-113
+2026-07-25 10:50:59,973 | INFO | 127.0.0.1 - - [25/Jul/2026 10:50:59] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-25 10:51:00,513 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:00] "POST /login HTTP/1.1" 200 -
+2026-07-25 10:51:00,631 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:00] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 10:51:00,643 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:00] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 10:51:22,374 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:22] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 10:51:22,409 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:22] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 10:51:24,224 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:24] "GET /products HTTP/1.1" 200 -
+2026-07-25 10:51:24,230 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:24] "GET /products HTTP/1.1" 200 -
+2026-07-25 10:51:24,309 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:24] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-25 10:51:24,310 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:24] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-25 10:51:24,312 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:24] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-25 10:51:36,066 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:36] "GET /sales HTTP/1.1" 200 -
+2026-07-25 10:51:36,088 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:36] "GET /sales HTTP/1.1" 200 -
+2026-07-25 10:51:37,348 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:37] "GET /customers HTTP/1.1" 200 -
+2026-07-25 10:51:37,361 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:37] "GET /customers HTTP/1.1" 200 -
+2026-07-25 10:51:38,672 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:38] "GET /suppliers HTTP/1.1" 200 -
+2026-07-25 10:51:38,689 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:38] "GET /suppliers HTTP/1.1" 200 -
+2026-07-25 10:51:39,969 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:39] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-25 10:51:39,972 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:39] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-25 10:51:39,983 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:39] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-25 10:51:40,004 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:40] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 10:51:40,005 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:40] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-25 10:51:40,013 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:40] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-25 10:51:40,015 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:40] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-25 10:51:40,025 | INFO | 127.0.0.1 - - [25/Jul/2026 10:51:40] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:13:45,901 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-25 11:13:45,902 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-25 11:13:45,906 | INFO |  * Restarting with stat
+2026-07-25 11:13:46,969 | WARNING |  * Debugger is active!
+2026-07-25 11:13:47,069 | INFO |  * Debugger PIN: 114-976-442
+2026-07-25 11:14:18,598 | INFO | 127.0.0.1 - - [25/Jul/2026 11:14:18] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-25 11:14:18,600 | INFO | 127.0.0.1 - - [25/Jul/2026 11:14:18] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-25 11:14:18,607 | INFO | 127.0.0.1 - - [25/Jul/2026 11:14:18] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-25 11:14:18,608 | INFO | 127.0.0.1 - - [25/Jul/2026 11:14:18] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-25 11:14:18,625 | INFO | 127.0.0.1 - - [25/Jul/2026 11:14:18] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-25 11:14:18,627 | INFO | 127.0.0.1 - - [25/Jul/2026 11:14:18] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-25 11:14:18,651 | INFO | 127.0.0.1 - - [25/Jul/2026 11:14:18] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:14:18,666 | INFO | 127.0.0.1 - - [25/Jul/2026 11:14:18] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:20:57,440 | INFO | 127.0.0.1 - - [25/Jul/2026 11:20:57] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-25 11:20:57,929 | INFO | 127.0.0.1 - - [25/Jul/2026 11:20:57] "POST /login HTTP/1.1" 200 -
+2026-07-25 11:20:57,983 | INFO | 127.0.0.1 - - [25/Jul/2026 11:20:57] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:20:57,996 | INFO | 127.0.0.1 - - [25/Jul/2026 11:20:57] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:21:18,756 | INFO | 127.0.0.1 - - [25/Jul/2026 11:21:18] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-25 11:21:18,768 | INFO | 127.0.0.1 - - [25/Jul/2026 11:21:18] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-25 11:21:26,111 | INFO | 127.0.0.1 - - [25/Jul/2026 11:21:26] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-25 11:21:26,639 | INFO | 127.0.0.1 - - [25/Jul/2026 11:21:26] "POST /login HTTP/1.1" 200 -
+2026-07-25 11:21:26,684 | INFO | 127.0.0.1 - - [25/Jul/2026 11:21:26] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:21:26,698 | INFO | 127.0.0.1 - - [25/Jul/2026 11:21:26] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:22:45,645 | INFO | 127.0.0.1 - - [25/Jul/2026 11:22:45] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-25 11:22:46,136 | INFO | 127.0.0.1 - - [25/Jul/2026 11:22:46] "POST /login HTTP/1.1" 200 -
+2026-07-25 11:22:46,177 | INFO | 127.0.0.1 - - [25/Jul/2026 11:22:46] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:22:46,189 | INFO | 127.0.0.1 - - [25/Jul/2026 11:22:46] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:24:20,324 | INFO | 127.0.0.1 - - [25/Jul/2026 11:24:20] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-25 11:24:20,798 | INFO | 127.0.0.1 - - [25/Jul/2026 11:24:20] "POST /login HTTP/1.1" 200 -
+2026-07-25 11:24:20,843 | INFO | 127.0.0.1 - - [25/Jul/2026 11:24:20] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:24:20,857 | INFO | 127.0.0.1 - - [25/Jul/2026 11:24:20] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:25:07,513 | INFO | 127.0.0.1 - - [25/Jul/2026 11:25:07] "GET /products HTTP/1.1" 200 -
+2026-07-25 11:25:07,525 | INFO | 127.0.0.1 - - [25/Jul/2026 11:25:07] "GET /products HTTP/1.1" 200 -
+2026-07-25 11:25:07,613 | INFO | 127.0.0.1 - - [25/Jul/2026 11:25:07] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-25 11:25:07,614 | INFO | 127.0.0.1 - - [25/Jul/2026 11:25:07] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-25 11:25:07,616 | INFO | 127.0.0.1 - - [25/Jul/2026 11:25:07] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-25 11:25:46,903 | INFO | 127.0.0.1 - - [25/Jul/2026 11:25:46] "GET /products HTTP/1.1" 200 -
+2026-07-25 11:25:46,915 | INFO | 127.0.0.1 - - [25/Jul/2026 11:25:46] "GET /products HTTP/1.1" 200 -
+2026-07-25 11:25:48,792 | INFO | 127.0.0.1 - - [25/Jul/2026 11:25:48] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-25 11:25:48,806 | INFO | 127.0.0.1 - - [25/Jul/2026 11:25:48] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-25 11:25:51,340 | INFO | 127.0.0.1 - - [25/Jul/2026 11:25:51] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:25:51,363 | INFO | 127.0.0.1 - - [25/Jul/2026 11:25:51] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:26:24,675 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:24] "GET /suppliers HTTP/1.1" 200 -
+2026-07-25 11:26:24,687 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:24] "GET /suppliers HTTP/1.1" 200 -
+2026-07-25 11:26:27,977 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:27] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-25 11:26:27,992 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:27] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-25 11:26:28,011 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:28] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-25 11:26:28,016 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:28] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-25 11:26:28,021 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:28] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-25 11:26:28,023 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:28] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:26:28,033 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:28] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-25 11:26:28,038 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:28] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:26:33,214 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:33] "GET /suppliers HTTP/1.1" 200 -
+2026-07-25 11:26:33,230 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:33] "GET /suppliers HTTP/1.1" 200 -
+2026-07-25 11:26:35,459 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:35] "GET /customers HTTP/1.1" 200 -
+2026-07-25 11:26:35,474 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:35] "GET /customers HTTP/1.1" 200 -
+2026-07-25 11:26:36,798 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:36] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:26:36,821 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:36] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:26:42,307 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:42] "GET /products HTTP/1.1" 200 -
+2026-07-25 11:26:42,323 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:42] "GET /products HTTP/1.1" 200 -
+2026-07-25 11:26:42,377 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:42] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-25 11:26:42,378 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:42] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-25 11:26:42,379 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:42] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-25 11:26:55,284 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:55] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-25 11:26:55,298 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:55] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-25 11:26:56,879 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:56] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:26:56,902 | INFO | 127.0.0.1 - - [25/Jul/2026 11:26:56] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:27:04,772 | INFO | 127.0.0.1 - - [25/Jul/2026 11:27:04] "GET /products HTTP/1.1" 200 -
+2026-07-25 11:27:04,787 | INFO | 127.0.0.1 - - [25/Jul/2026 11:27:04] "GET /products HTTP/1.1" 200 -
+2026-07-25 11:27:39,113 | INFO | 127.0.0.1 - - [25/Jul/2026 11:27:39] "GET /customers HTTP/1.1" 200 -
+2026-07-25 11:27:39,130 | INFO | 127.0.0.1 - - [25/Jul/2026 11:27:39] "GET /customers HTTP/1.1" 200 -
+2026-07-25 11:27:50,804 | INFO | 127.0.0.1 - - [25/Jul/2026 11:27:50] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:27:50,825 | INFO | 127.0.0.1 - - [25/Jul/2026 11:27:50] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:27:56,908 | INFO | 127.0.0.1 - - [25/Jul/2026 11:27:56] "GET /products HTTP/1.1" 200 -
+2026-07-25 11:27:56,921 | INFO | 127.0.0.1 - - [25/Jul/2026 11:27:56] "GET /products HTTP/1.1" 200 -
+2026-07-25 11:27:57,008 | INFO | 127.0.0.1 - - [25/Jul/2026 11:27:57] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-25 11:27:57,012 | INFO | 127.0.0.1 - - [25/Jul/2026 11:27:57] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-25 11:27:57,017 | INFO | 127.0.0.1 - - [25/Jul/2026 11:27:57] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-25 11:28:03,420 | INFO | 127.0.0.1 - - [25/Jul/2026 11:28:03] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:28:03,439 | INFO | 127.0.0.1 - - [25/Jul/2026 11:28:03] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:28:39,306 | INFO | 127.0.0.1 - - [25/Jul/2026 11:28:39] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-25 11:28:39,321 | INFO | 127.0.0.1 - - [25/Jul/2026 11:28:39] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-25 11:28:41,218 | INFO | 127.0.0.1 - - [25/Jul/2026 11:28:41] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:28:41,239 | INFO | 127.0.0.1 - - [25/Jul/2026 11:28:41] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:28:45,479 | INFO | 127.0.0.1 - - [25/Jul/2026 11:28:45] "GET /customers HTTP/1.1" 200 -
+2026-07-25 11:28:45,491 | INFO | 127.0.0.1 - - [25/Jul/2026 11:28:45] "GET /customers HTTP/1.1" 200 -
+2026-07-25 11:28:46,538 | INFO | 127.0.0.1 - - [25/Jul/2026 11:28:46] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:28:46,560 | INFO | 127.0.0.1 - - [25/Jul/2026 11:28:46] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:28:56,829 | INFO | 127.0.0.1 - - [25/Jul/2026 11:28:56] "GET /customers HTTP/1.1" 200 -
+2026-07-25 11:28:56,842 | INFO | 127.0.0.1 - - [25/Jul/2026 11:28:56] "GET /customers HTTP/1.1" 200 -
+2026-07-25 11:29:05,145 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:05] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-25 11:29:05,629 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:05] "POST /login HTTP/1.1" 200 -
+2026-07-25 11:29:05,674 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:05] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:29:05,687 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:05] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:29:11,590 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:11] "GET /products HTTP/1.1" 200 -
+2026-07-25 11:29:11,601 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:11] "GET /products HTTP/1.1" 200 -
+2026-07-25 11:29:11,663 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:11] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-25 11:29:11,666 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:11] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-25 11:29:11,668 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:11] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-25 11:29:47,974 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:47] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-25 11:29:48,455 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:48] "POST /login HTTP/1.1" 200 -
+2026-07-25 11:29:48,493 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:48] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:29:48,508 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:48] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:29:56,248 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:56] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:29:56,273 | INFO | 127.0.0.1 - - [25/Jul/2026 11:29:56] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:30:24,135 | INFO | 127.0.0.1 - - [25/Jul/2026 11:30:24] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-25 11:30:24,619 | INFO | 127.0.0.1 - - [25/Jul/2026 11:30:24] "POST /login HTTP/1.1" 200 -
+2026-07-25 11:30:24,666 | INFO | 127.0.0.1 - - [25/Jul/2026 11:30:24] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:30:24,679 | INFO | 127.0.0.1 - - [25/Jul/2026 11:30:24] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:30:58,279 | INFO | 127.0.0.1 - - [25/Jul/2026 11:30:58] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:30:58,300 | INFO | 127.0.0.1 - - [25/Jul/2026 11:30:58] "GET /sales HTTP/1.1" 200 -
+2026-07-25 11:31:57,679 | INFO | 127.0.0.1 - - [25/Jul/2026 11:31:57] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-25 11:31:58,167 | INFO | 127.0.0.1 - - [25/Jul/2026 11:31:58] "POST /login HTTP/1.1" 200 -
+2026-07-25 11:31:58,212 | INFO | 127.0.0.1 - - [25/Jul/2026 11:31:58] "GET /dashboard HTTP/1.1" 200 -
+2026-07-25 11:31:58,229 | INFO | 127.0.0.1 - - [25/Jul/2026 11:31:58] "GET /dashboard HTTP/1.1" 200 -
+2026-07-26 23:14:35,141 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-26 23:14:35,142 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-26 23:14:35,144 | INFO |  * Restarting with stat
+2026-07-26 23:14:36,236 | WARNING |  * Debugger is active!
+2026-07-26 23:14:36,368 | INFO |  * Debugger PIN: 404-918-385
+2026-07-26 23:15:49,002 | INFO | 127.0.0.1 - - [26/Jul/2026 23:15:49] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-26 23:15:49,522 | INFO | 127.0.0.1 - - [26/Jul/2026 23:15:49] "POST /login HTTP/1.1" 200 -
+2026-07-26 23:15:49,644 | INFO | 127.0.0.1 - - [26/Jul/2026 23:15:49] "GET /dashboard HTTP/1.1" 200 -
+2026-07-26 23:15:49,671 | INFO | 127.0.0.1 - - [26/Jul/2026 23:15:49] "GET /dashboard HTTP/1.1" 200 -
+2026-07-26 23:30:52,937 | INFO | 127.0.0.1 - - [26/Jul/2026 23:30:52] "GET /dashboard HTTP/1.1" 200 -
+2026-07-26 23:30:52,953 | INFO | 127.0.0.1 - - [26/Jul/2026 23:30:52] "GET /dashboard HTTP/1.1" 200 -
+2026-07-26 23:57:21,476 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:21] "GET /dashboard HTTP/1.1" 200 -
+2026-07-26 23:57:21,487 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:21] "GET /dashboard HTTP/1.1" 200 -
+2026-07-26 23:57:45,377 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:45] "GET /dashboard HTTP/1.1" 200 -
+2026-07-26 23:57:45,390 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:45] "GET /dashboard HTTP/1.1" 200 -
+2026-07-26 23:57:48,291 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:48] "GET /dashboard HTTP/1.1" 200 -
+2026-07-26 23:57:48,314 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:48] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-26 23:57:48,328 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:48] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-26 23:57:48,330 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:48] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-26 23:57:48,341 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:48] "GET /products HTTP/1.1" 200 -
+2026-07-26 23:57:48,345 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:48] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-26 23:57:48,352 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:48] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-26 23:57:48,355 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:48] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-26 23:57:48,359 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:48] "GET /products HTTP/1.1" 200 -
+2026-07-26 23:57:48,366 | INFO | 127.0.0.1 - - [26/Jul/2026 23:57:48] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 00:06:07,938 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:07] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 00:06:07,957 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:07] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-27 00:06:07,958 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:07] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-27 00:06:07,961 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:07] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-27 00:06:07,975 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:07] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:06:07,978 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:07] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-27 00:06:07,981 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:07] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-27 00:06:07,996 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:07] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-27 00:06:07,998 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:07] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:06:08,001 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:08] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 00:06:12,464 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:12] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:06:12,476 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:12] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:06:12,562 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:12] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-27 00:06:12,563 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:12] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-27 00:06:12,564 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:12] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-27 00:06:18,609 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:18] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-27 00:06:18,622 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:18] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-27 00:06:22,431 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:22] "GET /customers HTTP/1.1" 200 -
+2026-07-27 00:06:22,444 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:22] "GET /customers HTTP/1.1" 200 -
+2026-07-27 00:06:25,614 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:25] "GET /suppliers HTTP/1.1" 200 -
+2026-07-27 00:06:25,626 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:25] "GET /suppliers HTTP/1.1" 200 -
+2026-07-27 00:06:28,159 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:28] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-27 00:06:28,171 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:28] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-27 00:06:28,181 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:28] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-27 00:06:28,184 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:28] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:06:28,189 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:28] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-27 00:06:28,195 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:28] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-27 00:06:28,197 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:28] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 00:06:28,203 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:28] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:06:28,204 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:28] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-27 00:06:28,220 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:28] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 00:06:53,410 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:53] "GET /sales HTTP/1.1" 200 -
+2026-07-27 00:06:53,431 | INFO | 127.0.0.1 - - [27/Jul/2026 00:06:53] "GET /sales HTTP/1.1" 200 -
+2026-07-27 00:07:05,288 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:05] "GET /suppliers HTTP/1.1" 200 -
+2026-07-27 00:07:05,304 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:05] "GET /suppliers HTTP/1.1" 200 -
+2026-07-27 00:07:14,055 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:14] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:07:14,071 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:14] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:07:14,144 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:14] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-27 00:07:14,150 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:14] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-27 00:07:14,158 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:14] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-27 00:07:24,107 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:24] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:07:24,118 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:24] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:07:28,862 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:28] "GET /sales HTTP/1.1" 200 -
+2026-07-27 00:07:28,889 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:28] "GET /sales HTTP/1.1" 200 -
+2026-07-27 00:07:41,574 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:41] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-27 00:07:42,098 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:42] "POST /login HTTP/1.1" 200 -
+2026-07-27 00:07:42,144 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:42] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 00:07:42,158 | INFO | 127.0.0.1 - - [27/Jul/2026 00:07:42] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 00:08:15,385 | INFO | 127.0.0.1 - - [27/Jul/2026 00:08:15] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-27 00:08:15,388 | INFO | 127.0.0.1 - - [27/Jul/2026 00:08:15] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-27 00:08:15,405 | INFO | 127.0.0.1 - - [27/Jul/2026 00:08:15] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-27 00:08:15,415 | INFO | 127.0.0.1 - - [27/Jul/2026 00:08:15] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-27 00:08:15,421 | INFO | 127.0.0.1 - - [27/Jul/2026 00:08:15] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 00:08:15,432 | INFO | 127.0.0.1 - - [27/Jul/2026 00:08:15] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-27 00:08:15,445 | INFO | 127.0.0.1 - - [27/Jul/2026 00:08:15] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:08:15,452 | INFO | 127.0.0.1 - - [27/Jul/2026 00:08:15] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-27 00:08:15,460 | INFO | 127.0.0.1 - - [27/Jul/2026 00:08:15] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:08:15,468 | INFO | 127.0.0.1 - - [27/Jul/2026 00:08:15] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 00:08:19,566 | INFO | 127.0.0.1 - - [27/Jul/2026 00:08:19] "GET /sales HTTP/1.1" 200 -
+2026-07-27 00:08:19,588 | INFO | 127.0.0.1 - - [27/Jul/2026 00:08:19] "GET /sales HTTP/1.1" 200 -
+2026-07-27 00:32:24,426 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:24] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:32:24,442 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:24] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:32:24,536 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:24] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-27 00:32:24,537 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:24] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-27 00:32:24,539 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:24] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-27 00:32:30,313 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:30] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:32:30,325 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:30] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:32:32,897 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:32] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-27 00:32:32,904 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:32] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-27 00:32:32,936 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:32] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-27 00:32:32,943 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:32] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:32:32,945 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:32] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-27 00:32:32,948 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:32] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-27 00:32:32,979 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:32] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 00:32:32,984 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:32] "GET /products HTTP/1.1" 200 -
+2026-07-27 00:32:32,992 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:32] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-27 00:32:33,028 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:33] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 00:32:34,657 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:34] "GET /suppliers HTTP/1.1" 200 -
+2026-07-27 00:32:34,668 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:34] "GET /suppliers HTTP/1.1" 200 -
+2026-07-27 00:32:37,183 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:37] "GET /customers HTTP/1.1" 200 -
+2026-07-27 00:32:37,195 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:37] "GET /customers HTTP/1.1" 200 -
+2026-07-27 00:32:38,865 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:38] "GET /sales HTTP/1.1" 200 -
+2026-07-27 00:32:38,892 | INFO | 127.0.0.1 - - [27/Jul/2026 00:32:38] "GET /sales HTTP/1.1" 200 -
+2026-07-27 23:43:35,448 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-27 23:43:35,449 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-27 23:43:35,452 | INFO |  * Restarting with stat
+2026-07-27 23:43:36,955 | WARNING |  * Debugger is active!
+2026-07-27 23:43:37,099 | INFO |  * Debugger PIN: 271-678-412
+2026-07-27 23:51:50,014 | INFO | 127.0.0.1 - - [27/Jul/2026 23:51:50] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-27 23:51:50,543 | INFO | 127.0.0.1 - - [27/Jul/2026 23:51:50] "POST /login HTTP/1.1" 200 -
+2026-07-27 23:51:50,670 | INFO | 127.0.0.1 - - [27/Jul/2026 23:51:50] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 23:51:50,688 | INFO | 127.0.0.1 - - [27/Jul/2026 23:51:50] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 23:51:59,641 | INFO | 127.0.0.1 - - [27/Jul/2026 23:51:59] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 23:51:59,657 | INFO | 127.0.0.1 - - [27/Jul/2026 23:51:59] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 23:52:23,163 | INFO | 127.0.0.1 - - [27/Jul/2026 23:52:23] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-27 23:52:23,646 | INFO | 127.0.0.1 - - [27/Jul/2026 23:52:23] "POST /login HTTP/1.1" 200 -
+2026-07-27 23:52:23,696 | INFO | 127.0.0.1 - - [27/Jul/2026 23:52:23] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 23:52:23,710 | INFO | 127.0.0.1 - - [27/Jul/2026 23:52:23] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 23:59:35,420 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:35] "GET /products HTTP/1.1" 200 -
+2026-07-27 23:59:35,430 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:35] "GET /products HTTP/1.1" 200 -
+2026-07-27 23:59:35,498 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:35] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-27 23:59:35,502 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:35] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-27 23:59:35,503 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:35] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-27 23:59:40,838 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:40] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-27 23:59:40,845 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:40] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-27 23:59:40,849 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:40] "GET /products HTTP/1.1" 200 -
+2026-07-27 23:59:40,852 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:40] "GET /reports/monthly-sales HTTP/1.1" 200 -
+2026-07-27 23:59:40,856 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:40] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-27 23:59:40,863 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:40] "GET /reports/top-products HTTP/1.1" 200 -
+2026-07-27 23:59:40,865 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:40] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 23:59:40,868 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:40] "GET /reports/low-stock HTTP/1.1" 200 -
+2026-07-27 23:59:40,870 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:40] "GET /products HTTP/1.1" 200 -
+2026-07-27 23:59:40,882 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:40] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 23:59:55,626 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:55] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-27 23:59:56,114 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:56] "POST /login HTTP/1.1" 200 -
+2026-07-27 23:59:56,162 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:56] "GET /dashboard HTTP/1.1" 200 -
+2026-07-27 23:59:56,176 | INFO | 127.0.0.1 - - [27/Jul/2026 23:59:56] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:03:27,937 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/routes/dashboard_routes.py', reloading
+2026-07-28 00:03:28,189 | INFO |  * Restarting with stat
+2026-07-28 00:06:02,210 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-28 00:06:02,211 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-28 00:06:02,212 | INFO |  * Restarting with stat
+2026-07-28 00:06:03,299 | WARNING |  * Debugger is active!
+2026-07-28 00:06:03,300 | INFO |  * Debugger PIN: 271-678-412
+2026-07-28 00:06:17,605 | INFO | 127.0.0.1 - - [28/Jul/2026 00:06:17] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-28 00:06:18,133 | INFO | 127.0.0.1 - - [28/Jul/2026 00:06:18] "POST /login HTTP/1.1" 200 -
+2026-07-28 00:06:18,284 | INFO | 127.0.0.1 - - [28/Jul/2026 00:06:18] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:06:18,298 | INFO | 127.0.0.1 - - [28/Jul/2026 00:06:18] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:07:09,780 | INFO | 127.0.0.1 - - [28/Jul/2026 00:07:09] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-28 00:07:10,269 | INFO | 127.0.0.1 - - [28/Jul/2026 00:07:10] "POST /login HTTP/1.1" 200 -
+2026-07-28 00:07:10,321 | INFO | 127.0.0.1 - - [28/Jul/2026 00:07:10] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:07:10,337 | INFO | 127.0.0.1 - - [28/Jul/2026 00:07:10] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:10:26,575 | INFO | 127.0.0.1 - - [28/Jul/2026 00:10:26] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:10:26,595 | INFO | 127.0.0.1 - - [28/Jul/2026 00:10:26] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:14:19,949 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/routes/dashboard_routes.py', reloading
+2026-07-28 00:14:20,209 | INFO |  * Restarting with stat
+2026-07-28 00:19:45,694 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-28 00:19:45,694 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-28 00:19:45,696 | INFO |  * Restarting with stat
+2026-07-28 00:19:46,816 | WARNING |  * Debugger is active!
+2026-07-28 00:19:46,817 | INFO |  * Debugger PIN: 271-678-412
+2026-07-28 00:19:52,499 | INFO | 127.0.0.1 - - [28/Jul/2026 00:19:52] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:19:52,519 | INFO | 127.0.0.1 - - [28/Jul/2026 00:19:52] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:23:20,910 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/routes/dashboard_routes.py', reloading
+2026-07-28 00:23:21,305 | INFO |  * Restarting with stat
+2026-07-28 00:28:48,305 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-28 00:28:48,305 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-28 00:28:48,307 | INFO |  * Restarting with stat
+2026-07-28 00:28:49,560 | WARNING |  * Debugger is active!
+2026-07-28 00:28:49,561 | INFO |  * Debugger PIN: 271-678-412
+2026-07-28 00:29:19,541 | INFO | 127.0.0.1 - - [28/Jul/2026 00:29:19] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:29:19,561 | INFO | 127.0.0.1 - - [28/Jul/2026 00:29:19] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:29:54,160 | INFO | 127.0.0.1 - - [28/Jul/2026 00:29:54] "GET /products HTTP/1.1" 200 -
+2026-07-28 00:29:54,167 | INFO | 127.0.0.1 - - [28/Jul/2026 00:29:54] "GET /products HTTP/1.1" 200 -
+2026-07-28 00:29:54,230 | INFO | 127.0.0.1 - - [28/Jul/2026 00:29:54] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-28 00:29:54,232 | INFO | 127.0.0.1 - - [28/Jul/2026 00:29:54] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 00:29:54,233 | INFO | 127.0.0.1 - - [28/Jul/2026 00:29:54] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 00:29:55,944 | INFO | 127.0.0.1 - - [28/Jul/2026 00:29:55] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-28 00:29:55,959 | INFO | 127.0.0.1 - - [28/Jul/2026 00:29:55] "GET /stock-movements HTTP/1.1" 200 -
+2026-07-28 00:29:57,245 | INFO | 127.0.0.1 - - [28/Jul/2026 00:29:57] "GET /sales HTTP/1.1" 200 -
+2026-07-28 00:29:57,266 | INFO | 127.0.0.1 - - [28/Jul/2026 00:29:57] "GET /sales HTTP/1.1" 200 -
+2026-07-28 00:29:58,574 | INFO | 127.0.0.1 - - [28/Jul/2026 00:29:58] "GET /customers HTTP/1.1" 200 -
+2026-07-28 00:29:58,586 | INFO | 127.0.0.1 - - [28/Jul/2026 00:29:58] "GET /customers HTTP/1.1" 200 -
+2026-07-28 00:30:52,486 | INFO | 127.0.0.1 - - [28/Jul/2026 00:30:52] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-28 00:30:52,978 | INFO | 127.0.0.1 - - [28/Jul/2026 00:30:52] "POST /login HTTP/1.1" 200 -
+2026-07-28 00:30:53,033 | INFO | 127.0.0.1 - - [28/Jul/2026 00:30:53] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:30:53,052 | INFO | 127.0.0.1 - - [28/Jul/2026 00:30:53] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:31:10,865 | INFO | 127.0.0.1 - - [28/Jul/2026 00:31:10] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:31:10,910 | INFO | 127.0.0.1 - - [28/Jul/2026 00:31:10] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:31:12,278 | INFO | 127.0.0.1 - - [28/Jul/2026 00:31:12] "GET /products HTTP/1.1" 200 -
+2026-07-28 00:31:12,285 | INFO | 127.0.0.1 - - [28/Jul/2026 00:31:12] "GET /products HTTP/1.1" 200 -
+2026-07-28 00:31:12,326 | INFO | 127.0.0.1 - - [28/Jul/2026 00:31:12] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 00:31:12,331 | INFO | 127.0.0.1 - - [28/Jul/2026 00:31:12] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 00:31:12,332 | INFO | 127.0.0.1 - - [28/Jul/2026 00:31:12] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-28 00:31:20,742 | INFO | 127.0.0.1 - - [28/Jul/2026 00:31:20] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-28 00:31:21,227 | INFO | 127.0.0.1 - - [28/Jul/2026 00:31:21] "POST /login HTTP/1.1" 200 -
+2026-07-28 00:31:21,269 | INFO | 127.0.0.1 - - [28/Jul/2026 00:31:21] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:31:21,285 | INFO | 127.0.0.1 - - [28/Jul/2026 00:31:21] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:36:05,759 | INFO | 127.0.0.1 - - [28/Jul/2026 00:36:05] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:36:05,777 | INFO | 127.0.0.1 - - [28/Jul/2026 00:36:05] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:37:55,497 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/routes/dashboard_routes.py', reloading
+2026-07-28 00:37:55,816 | INFO |  * Restarting with stat
+2026-07-28 00:37:56,801 | WARNING |  * Debugger is active!
+2026-07-28 00:37:56,802 | INFO |  * Debugger PIN: 271-678-412
+2026-07-28 00:37:58,838 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/routes/dashboard_routes.py', reloading
+2026-07-28 00:37:59,136 | INFO |  * Restarting with stat
+2026-07-28 00:38:00,183 | WARNING |  * Debugger is active!
+2026-07-28 00:38:00,184 | INFO |  * Debugger PIN: 271-678-412
+2026-07-28 00:38:52,980 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/routes/dashboard_routes.py', reloading
+2026-07-28 00:38:53,207 | INFO |  * Restarting with stat
+2026-07-28 00:48:25,794 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-28 00:48:25,794 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-28 00:48:25,795 | INFO |  * Restarting with stat
+2026-07-28 00:48:27,058 | WARNING |  * Debugger is active!
+2026-07-28 00:48:27,059 | INFO |  * Debugger PIN: 271-678-412
+2026-07-28 00:48:33,811 | INFO | 127.0.0.1 - - [28/Jul/2026 00:48:33] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:48:33,827 | INFO | 127.0.0.1 - - [28/Jul/2026 00:48:33] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:51:44,934 | INFO | 127.0.0.1 - - [28/Jul/2026 00:51:44] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:51:44,953 | INFO | 127.0.0.1 - - [28/Jul/2026 00:51:44] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:53:58,970 | INFO | 127.0.0.1 - - [28/Jul/2026 00:53:58] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:53:59,009 | INFO | 127.0.0.1 - - [28/Jul/2026 00:53:59] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:57:16,124 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:16] "[35m[1mPOST /products HTTP/1.1[0m" 201 -
+2026-07-28 00:57:20,042 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:20] "GET /products HTTP/1.1" 200 -
+2026-07-28 00:57:20,051 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:20] "GET /products HTTP/1.1" 200 -
+2026-07-28 00:57:20,147 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:20] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 00:57:20,151 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:20] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-28 00:57:20,153 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:20] "GET /uploads/1a8166ae89e04d5084c0f023ad31b7ae_3d-laptop-concept-3d-illustration_441797-2374.jpg HTTP/1.1" 200 -
+2026-07-28 00:57:20,157 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:20] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 00:57:29,032 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:29] "GET /products HTTP/1.1" 200 -
+2026-07-28 00:57:29,037 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:29] "GET /products HTTP/1.1" 200 -
+2026-07-28 00:57:29,056 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:29] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 00:57:29,062 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:29] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-28 00:57:29,067 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:29] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 00:57:29,071 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:29] "[36mGET /uploads/1a8166ae89e04d5084c0f023ad31b7ae_3d-laptop-concept-3d-illustration_441797-2374.jpg HTTP/1.1[0m" 304 -
+2026-07-28 00:57:39,189 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:39] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-28 00:57:39,676 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:39] "POST /login HTTP/1.1" 200 -
+2026-07-28 00:57:39,726 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:39] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:57:39,741 | INFO | 127.0.0.1 - - [28/Jul/2026 00:57:39] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:58:28,214 | INFO | 127.0.0.1 - - [28/Jul/2026 00:58:28] "GET /sales HTTP/1.1" 200 -
+2026-07-28 00:58:28,232 | INFO | 127.0.0.1 - - [28/Jul/2026 00:58:28] "GET /sales HTTP/1.1" 200 -
+2026-07-28 00:58:40,907 | INFO | 127.0.0.1 - - [28/Jul/2026 00:58:40] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:58:40,953 | INFO | 127.0.0.1 - - [28/Jul/2026 00:58:40] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:58:51,867 | INFO | 127.0.0.1 - - [28/Jul/2026 00:58:51] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:58:51,888 | INFO | 127.0.0.1 - - [28/Jul/2026 00:58:51] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:59:11,580 | INFO | 127.0.0.1 - - [28/Jul/2026 00:59:11] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 00:59:11,628 | INFO | 127.0.0.1 - - [28/Jul/2026 00:59:11] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 01:01:43,639 | INFO | 127.0.0.1 - - [28/Jul/2026 01:01:43] "GET /sales HTTP/1.1" 200 -
+2026-07-28 01:01:43,647 | INFO | 127.0.0.1 - - [28/Jul/2026 01:01:43] "GET /sales HTTP/1.1" 200 -
+2026-07-28 01:01:55,932 | INFO | 127.0.0.1 - - [28/Jul/2026 01:01:55] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 01:01:55,979 | INFO | 127.0.0.1 - - [28/Jul/2026 01:01:55] "GET /dashboard HTTP/1.1" 200 -
+2026-07-28 01:02:00,002 | INFO | 127.0.0.1 - - [28/Jul/2026 01:02:00] "GET /sales HTTP/1.1" 200 -
+2026-07-28 01:02:00,019 | INFO | 127.0.0.1 - - [28/Jul/2026 01:02:00] "GET /sales HTTP/1.1" 200 -
+2026-07-28 01:11:13,884 | INFO | 127.0.0.1 - - [28/Jul/2026 01:11:13] "GET /customers HTTP/1.1" 200 -
+2026-07-28 01:11:13,886 | INFO | 127.0.0.1 - - [28/Jul/2026 01:11:13] "GET /products HTTP/1.1" 200 -
+2026-07-28 01:11:13,894 | INFO | 127.0.0.1 - - [28/Jul/2026 01:11:13] "GET /products HTTP/1.1" 200 -
+2026-07-28 01:11:13,896 | INFO | 127.0.0.1 - - [28/Jul/2026 01:11:13] "GET /customers HTTP/1.1" 200 -
+2026-07-28 01:11:14,019 | INFO | 127.0.0.1 - - [28/Jul/2026 01:11:14] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:11:14,023 | INFO | 127.0.0.1 - - [28/Jul/2026 01:11:14] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:11:14,024 | INFO | 127.0.0.1 - - [28/Jul/2026 01:11:14] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:11:14,065 | INFO | 127.0.0.1 - - [28/Jul/2026 01:11:14] "[36mGET /uploads/1a8166ae89e04d5084c0f023ad31b7ae_3d-laptop-concept-3d-illustration_441797-2374.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:13:52,694 | INFO | 127.0.0.1 - - [28/Jul/2026 01:13:52] "GET /customers HTTP/1.1" 200 -
+2026-07-28 01:13:52,695 | INFO | 127.0.0.1 - - [28/Jul/2026 01:13:52] "GET /products HTTP/1.1" 200 -
+2026-07-28 01:13:52,704 | INFO | 127.0.0.1 - - [28/Jul/2026 01:13:52] "GET /customers HTTP/1.1" 200 -
+2026-07-28 01:13:52,706 | INFO | 127.0.0.1 - - [28/Jul/2026 01:13:52] "GET /products HTTP/1.1" 200 -
+2026-07-28 01:13:52,784 | INFO | 127.0.0.1 - - [28/Jul/2026 01:13:52] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:13:52,795 | INFO | 127.0.0.1 - - [28/Jul/2026 01:13:52] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:13:52,803 | INFO | 127.0.0.1 - - [28/Jul/2026 01:13:52] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:13:52,807 | INFO | 127.0.0.1 - - [28/Jul/2026 01:13:52] "[36mGET /uploads/1a8166ae89e04d5084c0f023ad31b7ae_3d-laptop-concept-3d-illustration_441797-2374.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:26:39,843 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/services/sale_service.py', reloading
+2026-07-28 01:26:40,146 | INFO |  * Restarting with stat
+2026-07-28 01:26:41,180 | WARNING |  * Debugger is active!
+2026-07-28 01:26:41,181 | INFO |  * Debugger PIN: 271-678-412
+2026-07-28 01:27:24,780 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/services/sale_service.py', reloading
+2026-07-28 01:27:25,020 | INFO |  * Restarting with stat
+2026-07-28 01:27:26,196 | WARNING |  * Debugger is active!
+2026-07-28 01:27:26,197 | INFO |  * Debugger PIN: 271-678-412
+2026-07-28 01:27:27,235 | INFO |  * Detected change in '/home/rahma/development/code/phase_3/smartinventorysystem/backend/services/sale_service.py', reloading
+2026-07-28 01:27:27,556 | INFO |  * Restarting with stat
+2026-07-28 01:30:47,983 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-28 01:30:47,984 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-28 01:30:47,985 | INFO |  * Restarting with stat
+2026-07-28 01:30:49,260 | WARNING |  * Debugger is active!
+2026-07-28 01:30:49,260 | INFO |  * Debugger PIN: 271-678-412
+2026-07-28 01:31:03,432 | INFO | 127.0.0.1 - - [28/Jul/2026 01:31:03] "GET /products HTTP/1.1" 200 -
+2026-07-28 01:31:03,435 | INFO | 127.0.0.1 - - [28/Jul/2026 01:31:03] "GET /customers HTTP/1.1" 200 -
+2026-07-28 01:31:03,440 | INFO | 127.0.0.1 - - [28/Jul/2026 01:31:03] "GET /products HTTP/1.1" 200 -
+2026-07-28 01:31:03,445 | INFO | 127.0.0.1 - - [28/Jul/2026 01:31:03] "GET /customers HTTP/1.1" 200 -
+2026-07-28 01:31:03,507 | INFO | 127.0.0.1 - - [28/Jul/2026 01:31:03] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:31:03,518 | INFO | 127.0.0.1 - - [28/Jul/2026 01:31:03] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:31:03,526 | INFO | 127.0.0.1 - - [28/Jul/2026 01:31:03] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:31:03,537 | INFO | 127.0.0.1 - - [28/Jul/2026 01:31:03] "[36mGET /uploads/1a8166ae89e04d5084c0f023ad31b7ae_3d-laptop-concept-3d-illustration_441797-2374.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:31:50,633 | INFO | 127.0.0.1 - - [28/Jul/2026 01:31:50] "OPTIONS /sales HTTP/1.1" 200 -
+2026-07-28 01:31:50,755 | INFO | Sale INV-20260728013150 created successfully.
+2026-07-28 01:31:50,767 | INFO | 127.0.0.1 - - [28/Jul/2026 01:31:50] "[35m[1mPOST /sales HTTP/1.1[0m" 201 -
+2026-07-28 01:31:52,044 | INFO | 127.0.0.1 - - [28/Jul/2026 01:31:52] "GET /sales/6 HTTP/1.1" 200 -
+2026-07-28 01:31:52,064 | INFO | 127.0.0.1 - - [28/Jul/2026 01:31:52] "GET /sales/6 HTTP/1.1" 200 -
+2026-07-28 01:38:09,486 | INFO | 127.0.0.1 - - [28/Jul/2026 01:38:09] "GET /sales/6 HTTP/1.1" 200 -
+2026-07-28 01:38:09,491 | INFO | 127.0.0.1 - - [28/Jul/2026 01:38:09] "GET /sales/6 HTTP/1.1" 200 -
+2026-07-28 01:38:41,581 | INFO | 127.0.0.1 - - [28/Jul/2026 01:38:41] "GET /sales/6 HTTP/1.1" 200 -
+2026-07-28 01:38:41,587 | INFO | 127.0.0.1 - - [28/Jul/2026 01:38:41] "GET /sales/6 HTTP/1.1" 200 -
+2026-07-28 01:39:09,146 | INFO | 127.0.0.1 - - [28/Jul/2026 01:39:09] "GET /sales/6 HTTP/1.1" 200 -
+2026-07-28 01:39:09,154 | INFO | 127.0.0.1 - - [28/Jul/2026 01:39:09] "GET /sales/6 HTTP/1.1" 200 -
+2026-07-28 01:40:12,042 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-28 01:40:12,043 | INFO | [33mPress CTRL+C to quit[0m
+2026-07-28 01:40:12,044 | INFO |  * Restarting with stat
+2026-07-28 01:40:13,242 | WARNING |  * Debugger is active!
+2026-07-28 01:40:13,243 | INFO |  * Debugger PIN: 271-678-412
+2026-07-28 01:40:19,893 | INFO | 127.0.0.1 - - [28/Jul/2026 01:40:19] "GET /sales/6 HTTP/1.1" 200 -
+2026-07-28 01:40:19,901 | INFO | 127.0.0.1 - - [28/Jul/2026 01:40:19] "GET /sales/6 HTTP/1.1" 200 -
+2026-07-28 01:47:02,581 | INFO | 127.0.0.1 - - [28/Jul/2026 01:47:02] "GET /sales/6 HTTP/1.1" 200 -
+2026-07-28 01:47:02,587 | INFO | 127.0.0.1 - - [28/Jul/2026 01:47:02] "GET /sales/6 HTTP/1.1" 200 -
+2026-07-28 01:47:35,862 | INFO | 127.0.0.1 - - [28/Jul/2026 01:47:35] "GET /customers HTTP/1.1" 200 -
+2026-07-28 01:47:35,868 | INFO | 127.0.0.1 - - [28/Jul/2026 01:47:35] "GET /products HTTP/1.1" 200 -
+2026-07-28 01:47:35,873 | INFO | 127.0.0.1 - - [28/Jul/2026 01:47:35] "GET /customers HTTP/1.1" 200 -
+2026-07-28 01:47:35,877 | INFO | 127.0.0.1 - - [28/Jul/2026 01:47:35] "GET /products HTTP/1.1" 200 -
+2026-07-28 01:47:36,028 | INFO | 127.0.0.1 - - [28/Jul/2026 01:47:36] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:47:36,040 | INFO | 127.0.0.1 - - [28/Jul/2026 01:47:36] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:47:36,043 | INFO | 127.0.0.1 - - [28/Jul/2026 01:47:36] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:47:36,045 | INFO | 127.0.0.1 - - [28/Jul/2026 01:47:36] "[36mGET /uploads/1a8166ae89e04d5084c0f023ad31b7ae_3d-laptop-concept-3d-illustration_441797-2374.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:50:11,273 | INFO | 127.0.0.1 - - [28/Jul/2026 01:50:11] "GET /customers HTTP/1.1" 200 -
+2026-07-28 01:50:11,276 | INFO | 127.0.0.1 - - [28/Jul/2026 01:50:11] "GET /products HTTP/1.1" 200 -
+2026-07-28 01:50:11,283 | INFO | 127.0.0.1 - - [28/Jul/2026 01:50:11] "GET /customers HTTP/1.1" 200 -
+2026-07-28 01:50:11,284 | INFO | 127.0.0.1 - - [28/Jul/2026 01:50:11] "GET /products HTTP/1.1" 200 -
+2026-07-28 01:50:11,369 | INFO | 127.0.0.1 - - [28/Jul/2026 01:50:11] "[36mGET /uploads/b93176439916405bbe29dc8e5e735a04_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:50:11,384 | INFO | 127.0.0.1 - - [28/Jul/2026 01:50:11] "[36mGET /uploads/c75139f4075b4b97b6f2c3e0d485bf95_calculator-transparent-psd_7939-45081.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:50:11,391 | INFO | 127.0.0.1 - - [28/Jul/2026 01:50:11] "[36mGET /uploads/348789d2eb0c4deb964d64475f2901cf_back-school-supplies-accessories_200402-3992.jpg HTTP/1.1[0m" 304 -
+2026-07-28 01:50:11,396 | INFO | 127.0.0.1 - - [28/Jul/2026 01:50:11] "[36mGET /uploads/1a8166ae89e04d5084c0f023ad31b7ae_3d-laptop-concept-3d-illustration_441797-2374.jpg HTTP/1.1[0m" 304 -

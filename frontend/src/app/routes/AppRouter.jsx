@@ -22,6 +22,8 @@ import EditProduct from "../../features/inventory/pages/EditProduct";
 import ProductDetails from "../../features/inventory/pages/ProductDetails";
 import StockIn from "../../features/inventory/pages/StockIn";
 import StockOut from "../../features/inventory/pages/StockOut";
+import StockHistory from "../../features/inventory/pages/StockHistory";
+import POSPage from "../../features/sales/pages/POSPage";
 
 export default function AppRouter() {
   return (
@@ -75,11 +77,15 @@ export default function AppRouter() {
             element={<Customer />}
           />
 
-          <Route
-            path="/sales"
-            element={<SalesHistory />}
-          />
+         <Route
+  path="/sales"
+  element={<POSPage />}
+/>
 
+<Route
+  path="/sales/history"
+  element={<SalesHistory />}
+/>
           <Route
             path="/reports"
             element={<Reports />}
@@ -105,6 +111,10 @@ export default function AppRouter() {
 <Route
   path="/inventory/details/:id"
   element={<ProductDetails />}
+/>
+<Route
+  path="/inventory/history"
+  element={<StockHistory />}
 />
 
         </Route>

@@ -1,11 +1,15 @@
 from database.db import db
 from datetime import datetime
 
+
 class StockMovement(db.Model):
 
     __tablename__ = "stock_movements"
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(
+        db.Integer,
+        primary_key=True
+    )
 
     product_id = db.Column(
         db.Integer,
@@ -41,12 +45,12 @@ class StockMovement(db.Model):
 
             "product_id": self.product_id,
 
-            "product_name": self.product.name,
+            "product_name": self.product.name if self.product else "Unknown Product",
 
             "movement_type": self.movement_type,
 
             "quantity": self.quantity,
 
-            "created_at": self.created_at.strftime("%Y-%m-%d %H:%M:%S"),
+            "created_at": self.created_at.strftime("%d %b %Y %H:%M"),
 
         }

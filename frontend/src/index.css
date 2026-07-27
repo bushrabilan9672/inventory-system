@@ -127,4 +127,57 @@
   html {
     @apply font-sans;
     }
+
+    /* ===========================
+   PRINT RECEIPT ONLY
+=========================== */
+
+@media print {
+
+  body {
+    background: white !important;
+  }
+
+  /* Hide everything */
+
+  body * {
+    visibility: hidden;
+  }
+
+  /* Show receipt */
+
+  #receipt,
+  #receipt * {
+    visibility: visible;
+  }
+
+  #receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+  }
+
+  /* Hide sidebar */
+
+  aside {
+    display: none !important;
+  }
+
+  /* Hide top navigation */
+
+  header {
+    display: none !important;
+  }
+
+  nav {
+    display: none !important;
+  }
+
+  button {
+    display: none !important;
+  }
+
+}
 }

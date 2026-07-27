@@ -9,64 +9,124 @@ export default function LowStockAlert({ products = [] }) {
 
       <CardContent className="p-6">
 
-        <h2 className="mb-6 text-xl font-semibold">
+        <div className="mb-6 flex items-center justify-between">
 
-          Low Stock Alerts
+          <h2 className="text-xl font-semibold">
 
-        </h2>
+            Low Stock Alerts
+
+          </h2>
+
+          <Badge variant="outline">
+
+            {products.length} Products
+
+          </Badge>
+
+        </div>
 
         {products.length === 0 ? (
 
-          <p className="text-slate-500">
+          <div className="rounded-xl bg-green-50 p-6 text-center">
 
-            No low stock products.
+            <p className="font-medium text-green-700">
 
-          </p>
+              ✅ All products are sufficiently stocked.
+
+            </p>
+
+          </div>
 
         ) : (
 
-          <div className="space-y-4">
+          <div className="space-y-5">
 
-            {products.map((product) => (
+            {products.map((product) => {
 
-              <div
-                key={product.id}
-                className="flex items-center justify-between"
-              >
+              const percent = Math.min(
+                (product.quantity / product.minimum_stock) * 100,
+                100
+              );
 
-                <div>
+              return (
 
-                  <p className="font-medium">
+                <div
+                  key={product.id}
+                  className="rounded-xl border p-4"
+                >
 
-                    {product.name}
+                  <div className="mb-3 flex items-center justify-between">
 
-                  </p>
+                    <div>
 
-                  <p className="text-sm text-slate-500">
+                      <h3 className="font-semibold">
 
-                    Remaining: {product.quantity}
+                        {product.name}
 
-                  </p>
+                      </h3>
+
+                      <p className="text-sm text-slate-500">
+
+                        {product.category || "Uncategorized"}
+
+                      </p>
+
+                    </div>
+
+                    <Badge
+                      variant={
+                        product.quantity <= 3
+                          ? "destructive"
+                          : "secondary"
+                      }
+                    >
+
+                      {product.quantity <= 3
+                        ? "Critical"
+                        : product.quantity <= product.minimum_stock
+                        ? "Low"
+                        : "Warning"}
+
+                    </Badge>
+
+                  </div>
+
+                  <div className="mb-2 flex justify-between text-sm">
+
+                    <span>
+
+                      Stock: {product.quantity}
+
+                    </span>
+
+                    <span>
+
+                      Minimum: {product.minimum_stock}
+
+                    </span>
+
+                  </div>
+
+                  <div className="h-2 overflow-hidden rounded-full bg-slate-200">
+
+                    <div
+                      className={`h-full rounded-full ${
+                        product.quantity <= 3
+                          ? "bg-red-500"
+                          : "bg-yellow-500"
+                      }`}
+                      style={{
+                        width: `${percent}%`,
+                      }}
+                    />
+
+                  </div>
 
                 </div>
 
-                <Badge
-                  variant={
-                    product.quantity <= 3
-                      ? "destructive"
-                      : "secondary"
-                  }
-                >
+              );
 
-                  {product.quantity <= 3
-                    ? "Critical"
-                    : "Low"}
-
-                </Badge>
-
-              </div>
-
-            ))}
+            })}
 
           </div>
 

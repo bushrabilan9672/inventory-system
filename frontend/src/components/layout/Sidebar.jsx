@@ -6,8 +6,8 @@ import {
   Truck,
   BarChart3,
   Settings,
+  History,
 } from "lucide-react";
-
 import { NavLink } from "react-router-dom";
 
 import Logo from "./Logo";
@@ -23,6 +23,11 @@ const menuItems = [
     icon: Package,
     path: "/inventory",
   },
+  {
+  title: "Stock History",
+  icon: History,
+  path: "/inventory/history",
+},
   {
     title: "Sales",
     icon: ShoppingCart,
