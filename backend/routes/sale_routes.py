@@ -1,11 +1,12 @@
 from flask import Blueprint, request, jsonify
-
 from sqlalchemy import extract, func
 
 from database.db import db
 
 from models.sale import Sale
 from models.sale_item import SaleItem
+from models.product import Product
+
 from services.sale_service import SaleService
 
 sale_bp = Blueprint("sales", __name__)
@@ -33,9 +34,11 @@ def create_sale():
 @sale_bp.route("/sales", methods=["GET"])
 def get_sales():
 
-    sales = Sale.query.order_by(
-        Sale.created_at.desc()
-    ).all()
+    sales = (
+        Sale.query
+        .order_by(Sale.created_at.desc())
+        .all()
+    )
 
     return jsonify([
         sale.to_dict()
@@ -51,9 +54,7 @@ def get_sale(id):
 
     sale = Sale.query.get_or_404(id)
 
-    return jsonify(
-        sale.to_dict()
-    )
+    return jsonify(sale.to_dict())
 
 
 # ===========================================
@@ -108,6 +109,8 @@ def monthly_sales():
         })
 
     return jsonify(data)
+
+
 # ===========================================
 # Top Selling Products
 # ===========================================
@@ -120,7 +123,9 @@ def top_products():
             func.sum(SaleItem.quantity).label("sold"),
         )
         .group_by(SaleItem.product_name)
-        .order_by(func.sum(SaleItem.quantity).desc())
+        .order_by(
+            func.sum(SaleItem.quantity).desc()
+        )
         .limit(5)
         .all()
     )
@@ -131,4 +136,31 @@ def top_products():
             "sold": int(row.sold),
         }
         for row in results
+    ])
+
+
+# ===========================================
+# Low Stock Products
+# ===========================================
+@sale_bp.route("/reports/low-stock", methods=["GET"])
+def low_stock():
+
+    products = (
+        Product.query
+        .filter(
+            Product.quantity <= Product.minimum_stock
+        )
+        .order_by(Product.quantity.asc())
+        .all()
+    )
+
+    return jsonify([
+        {
+            "id": product.id,
+            "name": product.name,
+            "category": product.category,
+            "quantity": product.quantity,
+            "minimum_stock": product.minimum_stock,
+        }
+        for product in products
     ])

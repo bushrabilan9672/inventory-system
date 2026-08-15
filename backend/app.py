@@ -8,14 +8,15 @@ from flask_migrate import Migrate
 from models.sale import Sale
 from models.sale_item import SaleItem
 from models.payment import Payment
-from models.sale import Sale
-from models.sale_item import SaleItem
-from models.payment import Payment
 from models.stock_movement import StockMovement
-
+from models.notification import Notification
+from routes.notification_routes import notification_bp
 from routes.sale_routes import sale_bp
 from routes.dashboard_routes import dashboard_bp
 from routes.auth_routes import auth_bp
+from models.setting import Setting
+from routes.settings_routes import settings_bp
+
 
 import os
 
@@ -45,7 +46,8 @@ app.register_blueprint(customer_bp)
 app.register_blueprint(sale_bp)
 app.register_blueprint(dashboard_bp)
 app.register_blueprint(auth_bp)
-
+app.register_blueprint(settings_bp)
+app.register_blueprint(notification_bp)
 @app.route("/")
 def home():
     return {

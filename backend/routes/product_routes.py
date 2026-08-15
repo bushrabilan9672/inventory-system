@@ -3,6 +3,7 @@ from database.db import db
 
 from models.product import Product
 from models.stock_movement import StockMovement
+from services.notification_service import NotificationService
 
 from sqlalchemy.exc import IntegrityError
 
@@ -297,6 +298,11 @@ def stock_out(id):
     )
 
     db.session.add(movement)
+
+ # Create low-stock notification if necessary
+    NotificationService.low_stock(product)
+
+
     db.session.commit()
 
     return jsonify(product.to_dict())

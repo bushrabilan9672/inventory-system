@@ -4,49 +4,53 @@ export default function ReceiptHeader({
     address: "Garissa, Kenya",
     phone: "+254 700 000 000",
     email: "info@smartinventory.com",
+    website: "www.smartinventory.com",
   },
   sale = {},
 }) {
   return (
-    <div className="text-center border-b pb-4 mb-4">
+    <div className="border-b pb-6 mb-6">
 
-      <h1 className="text-2xl font-bold uppercase">
-        {business.name}
-      </h1>
+      <div className="text-center space-y-1">
 
-      <p className="text-sm text-gray-600">
-        {business.address}
-      </p>
+        <h1 className="text-3xl font-bold uppercase tracking-wide">
+          {business.name}
+        </h1>
 
-      <p className="text-sm text-gray-600">
-        {business.phone}
-      </p>
-
-      <p className="text-sm text-gray-600">
-        {business.email}
-      </p>
-
-      <div className="mt-4 text-left space-y-1">
-
-        <p>
-          <strong>Invoice:</strong>{" "}
-          {sale.invoice_number}
+        <p className="text-sm text-slate-600">
+          {business.address}
         </p>
 
-        <p>
-          <strong>Date:</strong>{" "}
-          {sale.created_at}
+        <p className="text-sm text-slate-600">
+          Tel: {business.phone}
         </p>
 
-        <p>
-          <strong>Customer:</strong>{" "}
-          {sale.customer_name}
+        <p className="text-sm text-slate-600">
+          {business.email}
         </p>
 
-        <p>
-          <strong>Payment:</strong>{" "}
-          {sale.payment_method}
+        <p className="text-sm text-slate-600">
+          {business.website}
         </p>
+
+      </div>
+
+      <div className="mt-6 grid grid-cols-2 gap-y-2 text-sm">
+
+        <span className="font-semibold">Invoice No</span>
+        <span className="text-right">{sale.invoice_number}</span>
+
+        <span className="font-semibold">Date</span>
+        <span className="text-right">{sale.created_at}</span>
+
+        <span className="font-semibold">Customer</span>
+        <span className="text-right">{sale.customer_name}</span>
+
+        <span className="font-semibold">Payment</span>
+        <span className="text-right">{sale.payment_method}</span>
+
+        <span className="font-semibold">Cashier</span>
+        <span className="text-right">Admin</span>
 
       </div>
 

@@ -24,6 +24,9 @@ import StockIn from "../../features/inventory/pages/StockIn";
 import StockOut from "../../features/inventory/pages/StockOut";
 import StockHistory from "../../features/inventory/pages/StockHistory";
 import POSPage from "../../features/sales/pages/POSPage";
+import Settings from "../../features/settings/pages/Settings";
+import Notifications from "../../pages/Notifications";
+import Profile from "../../pages/Profile";
 
 export default function AppRouter() {
   return (
@@ -76,6 +79,15 @@ export default function AppRouter() {
             path="/customers"
             element={<Customer />}
           />
+          <Route
+  path="/notifications"
+  element={<Notifications />}
+/>
+
+<Route
+  path="/profile"
+  element={<Profile />}
+/>
 
          <Route
   path="/sales"
@@ -115,6 +127,19 @@ export default function AppRouter() {
 <Route
   path="/inventory/history"
   element={<StockHistory />}
+/>
+<Route
+  path="/settings"
+  element={<Settings />}
+/>
+<Route
+  path="/notifications"
+  element={<Notifications />}
+/>
+
+<Route
+  path="/profile"
+  element={<Profile />}
 />
 
         </Route>

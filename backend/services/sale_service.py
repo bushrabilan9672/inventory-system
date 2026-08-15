@@ -1,3 +1,4 @@
+
 from database.db import db
 
 from models.sale import Sale
@@ -6,6 +7,7 @@ from models.payment import Payment
 from models.product import Product
 from models.customer import Customer
 from models.stock_movement import StockMovement
+from models.notification import Notification
 
 from utils.invoice import generate_invoice_number
 from utils.logger import logger
@@ -138,6 +140,20 @@ class SaleService:
 
             db.session.add(payment)
 
+            # ==========================================
+            # Create notification for successful sale
+            # ==========================================
+
+            notification = Notification(
+                title="New sale recorded",
+                message=f"Sale {invoice_number} has been successfully recorded.",
+                notification_type="success",
+                is_read=False,
+            )
+
+            db.session.add(notification)
+
+            # Save everything
             db.session.commit()
 
             logger.info(
