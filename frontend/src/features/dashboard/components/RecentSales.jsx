@@ -1,5 +1,5 @@
-import { Card, CardContent } from "../ui/card";
-import { Avatar, AvatarFallback } from "../ui/avatar";
+import { Card, CardContent } from "../../../components/ui/card";
+import { Avatar, AvatarFallback } from "../../../components/ui/avatar";
 
 export default function RecentSales({ sales = [] }) {
 

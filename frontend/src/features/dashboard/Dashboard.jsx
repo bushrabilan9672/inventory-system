@@ -14,9 +14,9 @@ import TopBar from "./components/TopBar";
 import WelcomeBanner from "./components/WelcomeBanner";
 import KPICards from "./components/KPICards";
 
-import SalesChart from "../../components/dashboard/SalesChart";
-import RecentSales from "../../components/dashboard/RecentSales";
-import LowStockAlert from "../../components/dashboard/LowStockAlert";
+
+import RecentSales from "./components/RecentSales";
+import LowStockAlert from "./components/LowStockAlert";
 
 import QuickActions from "./components/QuickActions";
 import ActivityFeed from "./components/ActivityFeed";
@@ -122,38 +122,33 @@ export default function Dashboard() {
             Trend Charts
         ========================================== */}
 
-        <div className="grid gap-6 lg:grid-cols-2">
+       <div className="grid gap-6 lg:grid-cols-2">
 
-          <SalesTrend
-            data={dashboard.sales_chart}
-          />
+  <SalesTrend
+    data={dashboard.sales_chart}
+  />
 
-          <InventoryTrend />
+  <InventoryTrend
+    data={dashboard.inventory_chart}
+  />
 
-        </div>
+</div>
 
         {/* ==========================================
             Sales
         ========================================== */}
 
-        <div className="grid gap-6 lg:grid-cols-3">
+       <div className="grid gap-6 lg:grid-cols-3">
 
-          <div className="lg:col-span-2">
+  <div className="lg:col-span-2">
+    <RecentSales
+      sales={dashboard.recent_sales}
+    />
+  </div>
 
-            <SalesChart />
+</div>
 
-          </div>
-
-          <RecentSales
-            sales={dashboard.recent_sales}
-          />
-
-        </div>
-
-        <InventoryTrend
-          data={dashboard.inventory_chart}
-        />
-
+        
         {/* ==========================================
             Low Stock + Inventory Summary
         ========================================== */}

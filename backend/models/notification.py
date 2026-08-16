@@ -1,5 +1,6 @@
 from database.db import db
 from datetime import datetime
+from models.product import Product
 
 
 class Notification(db.Model):
@@ -19,6 +20,11 @@ class Notification(db.Model):
         db.ForeignKey("products.id"),
         nullable=True
     )
+
+    product = db.relationship(
+    "Product",
+    backref="notifications"
+)
 
     title = db.Column(
         db.String(200),
@@ -52,6 +58,7 @@ class Notification(db.Model):
         return {
             "id": self.id,
             "product_id": self.product_id,
+            "product_name": self.product.name if self.product else None,
             "title": self.title,
             "message": self.message,
             "notification_type": self.notification_type,

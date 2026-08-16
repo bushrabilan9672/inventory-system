@@ -1,6 +1,9 @@
 import { Button } from "../../../components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export default function WelcomeBanner() {
+  const navigate = useNavigate();
+
   return (
     <section className="rounded-3xl bg-gradient-to-r from-blue-700 to-indigo-700 p-8 text-white">
 
@@ -18,7 +21,10 @@ export default function WelcomeBanner() {
 
         </div>
 
-        <Button className="bg-white text-blue-700 hover:bg-slate-100">
+        <Button
+          onClick={() => navigate("/reports")}
+          className="bg-white text-blue-700 hover:bg-slate-100"
+        >
           Generate Report
         </Button>
 
